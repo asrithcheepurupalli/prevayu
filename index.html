@@ -227,13 +227,40 @@
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal, h1.title .l > span, .hero-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
+    .reveal, h1.title .l > span, .hero-foot,
+    .riskmap .dot, .riskmap .link, .riskmap .rm-row { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
   }
+
+  /* ===== motion pass ===== */
+  .reveal { transition-delay: var(--d, 0ms); }
+  nav { transition: box-shadow .3s ease; }
+  nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28); }
+  .scroll-prog { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--ink); transition: width .12s linear; }
+  .btn { transition: transform .18s ease, background .2s ease, color .2s ease, box-shadow .3s ease; }
+  .btn.lg:hover { box-shadow: 0 12px 26px -14px rgba(0,0,0,.5); }
+  .row h3 { transition: transform .3s ease; }
+  .row:hover h3 { transform: translateX(6px); }
+  .row:hover .rn { color: var(--ink); }
+  .price-row { position: relative; transition: padding-left .3s ease; }
+  .price-row::before { content: ""; position: absolute; left: -1.1rem; top: 50%; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); transform: translateY(-50%) scale(0); transition: transform .3s ease; }
+  .price-row:hover { padding-left: .6rem; }
+  .price-row:hover::before { transform: translateY(-50%) scale(1); }
+  .trust-item { transition: padding-left .3s ease; }
+  .trust-item:hover { padding-left: .5rem; }
+  .founder, .m-item { transition: transform .35s ease; }
+  .founder:hover, .m-item:hover { transform: translateY(-4px); }
+  .riskmap .dot { transform: scale(0); transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .riskmap .link { transform: scaleX(0); transform-origin: left; transition: transform .5s ease; }
+  .riskmap .rm-row { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+  .riskmap.in .dot { transform: scale(1); }
+  .riskmap.in .link { transform: scaleX(1); }
+  .riskmap.in .rm-row { opacity: 1; transform: none; }
 </style>
 </head>
 <body>
 
 <nav>
+  <div class="scroll-prog" id="scrollProg"></div>
   <div class="wrap nav-in">
     <a class="brand" href="#top">Prevayu<sup>IN</sup></a>
     <div class="nav-links">
@@ -506,6 +533,34 @@
       });
     }, { threshold: 0.4 });
     demoObs.observe(document.getElementById('score'));
+  })();
+</script>
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // stagger reveals within each parent
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      var kids = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList && c.classList.contains('reveal'); });
+      var i = kids.indexOf(el);
+      if (!reduce) el.style.transitionDelay = (i * 70) + 'ms';
+    });
+    // family risk map inner stagger
+    document.querySelectorAll('.riskmap').forEach(function (rm) {
+      rm.querySelectorAll('.dot').forEach(function (d, i) { d.style.transitionDelay = (i * 120) + 'ms'; });
+      rm.querySelectorAll('.link').forEach(function (l, i) { l.style.transitionDelay = (i * 120 + 80) + 'ms'; });
+      rm.querySelectorAll('.rm-row').forEach(function (r, i) { r.style.transitionDelay = (320 + i * 100) + 'ms'; });
+    });
+    // nav scroll progress + scrolled state
+    var nav = document.querySelector('nav');
+    var prog = document.getElementById('scrollProg');
+    function onScroll() {
+      var st = window.scrollY || document.documentElement.scrollTop || 0;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (prog) prog.style.width = (h > 0 ? (st / h * 100) : 0) + '%';
+      if (nav) nav.classList.toggle('scrolled', st > 8);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   })();
 </script>
 </body>
