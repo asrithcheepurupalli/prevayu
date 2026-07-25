@@ -27,253 +27,23 @@
 <meta name="twitter:title" content="Prevayu · A personal health guide for every Indian family">
 <meta name="twitter:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
 <meta name="twitter:image" content="https://prevayu.vercel.app/og-image.png">
-<style>
-  :root {
-    --bg: #ffffff;
-    --ink: #0a0a0a;
-    --mut: #737373;
-    --faint: #a3a3a3;
-    --line: #e4e4e4;
-    --inv-bg: #0a0a0a;
-    --inv-ink: #ffffff;
-    --inv-mut: #a3a3a3;
-    --inv-line: #2a2a2a;
-    --sans: "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
-    --mono: ui-monospace, "SF Mono", "Menlo", "Cascadia Code", monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0a0a0a; --ink: #f2f2f2; --mut: #8a8a8a; --faint: #5c5c5c; --line: #232323;
-      --inv-bg: #f2f2f2; --inv-ink: #0a0a0a; --inv-mut: #4a4a4a; --inv-line: #d4d4d4;
-    }
-  }
-  :root[data-theme="light"] {
-    --bg:#fff; --ink:#0a0a0a; --mut:#737373; --faint:#a3a3a3; --line:#e4e4e4;
-    --inv-bg:#0a0a0a; --inv-ink:#fff; --inv-mut:#a3a3a3; --inv-line:#2a2a2a;
-  }
-  :root[data-theme="dark"] {
-    --bg:#0a0a0a; --ink:#f2f2f2; --mut:#8a8a8a; --faint:#5c5c5c; --line:#232323;
-    --inv-bg:#f2f2f2; --inv-ink:#0a0a0a; --inv-mut:#4a4a4a; --inv-line:#d4d4d4;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--sans); font-size: 17px; line-height: 1.55;
-    -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; overflow-x: hidden;
-  }
-  h1, h2, h3 { margin: 0; font-weight: 700; line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance; }
-  p { margin: 0; }
-  a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--ink); color: var(--bg); }
-
-  .wrap { width: min(1200px, 90vw); margin: 0 auto; }
-
-  .eyebrow {
-    font-family: var(--mono); font-size: .72rem; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--mut); display: flex; gap: 1.2em; align-items: center;
-  }
-  .eyebrow b { color: var(--ink); font-weight: 400; }
-
-  /* nav */
-  nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-  .brand { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.04em; }
-  .brand sup { font-family: var(--mono); font-size: .5rem; letter-spacing: .1em; vertical-align: super; color: var(--mut); font-weight: 400; }
-  .nav-links { display: flex; gap: 2.2rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); }
-  .nav-links a { position: relative; }
-  .nav-links a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background: var(--ink); transition: width .28s ease; }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links a:hover::after { width: 100%; }
-  @media (max-width: 860px) { .nav-links { display: none; } }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; font-size: .95rem;
-    padding: .82rem 1.5rem; border-radius: 0; cursor: pointer; border: 1.5px solid var(--ink);
-    background: var(--ink); color: var(--bg); transition: background .2s, color .2s, transform .15s;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn.ghost { background: transparent; color: var(--ink); }
-  .btn.ghost:hover { background: var(--ink); color: var(--bg); }
-  .btn.lg { padding: 1.05rem 2rem; font-size: 1.05rem; }
-  .inv .btn { border-color: var(--inv-ink); background: var(--inv-ink); color: var(--inv-bg); }
-  .inv .btn.ghost { background: transparent; color: var(--inv-ink); }
-  .inv .btn.ghost:hover { background: var(--inv-ink); color: var(--inv-bg); }
-
-  /* hero */
-  header.hero { padding: clamp(3.5rem, 9vw, 8rem) 0 clamp(3rem, 6vw, 5.5rem); }
-  h1.title { font-size: clamp(2.9rem, 10.5vw, 8.6rem); font-weight: 800; letter-spacing: -0.045em; }
-  h1.title .l { display: block; overflow: hidden; }
-  h1.title .l > span { display: block; transform: translateY(105%); animation: rise .9s cubic-bezier(.22,1,.36,1) forwards; }
-  h1.title .l:nth-child(2) > span { animation-delay: .09s; }
-  h1.title .l:nth-child(3) > span { animation-delay: .18s; }
-  h1.title em { font-style: normal; -webkit-text-stroke: 1.5px var(--ink); color: transparent; }
-  @keyframes rise { to { transform: translateY(0); } }
-  .hero-foot { margin-top: clamp(2rem, 4vw, 3.4rem); display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; opacity: 0; animation: fade 1s ease .5s forwards; }
-  @keyframes fade { to { opacity: 1; } }
-  .hero-foot p { max-width: 40ch; color: var(--mut); font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.5; }
-  .hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; }
-
-  /* generic section */
-  section { padding: clamp(4rem, 9vw, 8rem) 0; border-top: 1px solid var(--line); }
-  .inv { background: var(--inv-bg); color: var(--inv-ink); border-top: none; }
-  .inv .eyebrow { color: var(--inv-mut); }
-  .inv .eyebrow b { color: var(--inv-ink); }
-  .big-head { font-size: clamp(2.2rem, 6vw, 5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.96; }
-  .lede { color: var(--mut); font-size: clamp(1.1rem, 1.6vw, 1.35rem); max-width: 46ch; line-height: 1.5; }
-  .inv .lede { color: var(--inv-mut); }
-  .stack-sm { display: flex; flex-direction: column; gap: 1.4rem; }
-
-  /* ---- interactive score ---- */
-  .score-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-  .score-readout { display: flex; align-items: baseline; gap: 1.2rem; }
-  .score-num { font-family: var(--sans); font-weight: 800; font-size: clamp(5rem, 18vw, 15rem); line-height: .8; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
-  .score-meta { font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; line-height: 1.7; color: var(--inv-mut); text-transform: uppercase; }
-  .score-meta b { color: var(--inv-ink); font-weight: 700; display: block; font-size: 1rem; }
-  .chart-box { position: relative; }
-  .chart-box svg { display: block; width: 100%; height: clamp(160px, 26vw, 300px); overflow: visible; }
-  .chart-box .grid line { stroke: var(--inv-line); stroke-width: 1; }
-  #scoreLine { fill: none; stroke: var(--inv-ink); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
-  #scoreDot { fill: var(--inv-bg); stroke: var(--inv-ink); stroke-width: 3; }
-  .month-marks { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .64rem; letter-spacing: .06em; color: var(--inv-mut); margin-top: .9rem; text-transform: uppercase; }
-  .scrub-row { margin-top: 2rem; display: flex; align-items: center; gap: 1.4rem; }
-  .scrub-row .hint { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--inv-mut); white-space: nowrap; }
-  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 2px; background: var(--inv-line); outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--inv-ink); border: none; cursor: grab; transition: transform .15s; }
-  input[type=range]::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.18); }
-  input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--inv-ink); border: none; cursor: grab; }
-  input[type=range]::-moz-range-track { height: 2px; background: var(--inv-line); }
-
-  /* ---- numbered rows (problem / how) ---- */
-  .rows { border-top: 1px solid var(--line); margin-top: 3rem; }
-  .row { display: grid; grid-template-columns: 5rem 1fr 1.4fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--line); align-items: start; }
-  .row .rn { font-family: var(--mono); font-size: .85rem; color: var(--faint); letter-spacing: .05em; padding-top: .5rem; }
-  .row h3 { font-size: clamp(1.5rem, 3vw, 2.3rem); font-weight: 700; }
-  .row p { color: var(--mut); font-size: 1.05rem; line-height: 1.5; }
-  @media (max-width: 760px) { .row { grid-template-columns: 3rem 1fr; } .row p { grid-column: 2; } }
-
-  /* ---- guide split ---- */
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
-  @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
-  .chat { display: flex; flex-direction: column; gap: .7rem; }
-  .bub { border: 1px solid var(--line); padding: 1rem 1.2rem; max-width: 85%; font-size: .98rem; line-height: 1.45; }
-  .bub .w { font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: .35rem; }
-  .bub.you { margin-left: auto; background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .bub.you .w { color: var(--faint); }
-
-  /* ---- trust ---- */
-  .trust-list { margin-top: 2.5rem; }
-  .trust-item { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 1.6rem 0; border-top: 1px solid var(--inv-line); align-items: baseline; }
-  .trust-item:last-child { border-bottom: 1px solid var(--inv-line); }
-  .trust-item .x { font-family: var(--mono); font-size: 1.3rem; }
-  .trust-item h3 { font-size: clamp(1.3rem, 2.6vw, 2rem); font-weight: 700; }
-  .trust-item p { color: var(--inv-mut); margin-top: .4rem; font-size: 1rem; }
-
-  /* ---- pricing ---- */
-  .price-row { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 2rem; align-items: center; padding: 1.8rem 0; border-bottom: 1px solid var(--line); }
-  .price-row:first-of-type { border-top: 1px solid var(--line); }
-  .price-row .pn { font-size: clamp(1.3rem, 2.6vw, 2rem); font-weight: 700; }
-  .price-row .pd { color: var(--mut); font-size: .98rem; }
-  .price-row .pa { font-family: var(--mono); font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  @media (max-width: 680px) { .price-row { grid-template-columns: 1fr auto; } .price-row .pd { grid-column: 1 / -1; grid-row: 2; } }
-
-  /* ---- founders ---- */
-  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
-  @media (max-width: 760px) { .founders { grid-template-columns: 1fr; gap: 2.5rem; } }
-  .founder .role { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
-  .founder h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; margin: .5rem 0 .7rem; }
-  .founder p { color: var(--mut); font-size: 1.02rem; line-height: 1.5; }
-
-  /* ---- genetics / family risk map ---- */
-  .cover { display: flex; flex-wrap: wrap; gap: .5rem .7rem; margin-top: .6rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); }
-  .cover b { color: var(--ink); font-weight: 600; }
-  .riskmap { padding: 1.7rem 1.7rem 1.6rem; }
-  .rm-head { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: 1.4rem; }
-  .lineage { display: flex; align-items: flex-start; gap: .5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
-  .lineage .node { display: flex; flex-direction: column; align-items: center; }
-  .lineage .node .dot { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--ink); margin-bottom: .5rem; }
-  .lineage .node.carry .dot { background: var(--ink); }
-  .lineage .node span { font-family: var(--mono); font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; color: var(--mut); }
-  .lineage .link { flex: 1; height: 2px; background: var(--ink); opacity: .28; margin-top: 6px; }
-  .rm-row { display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
-  .rm-row:first-of-type { border-top: none; padding-top: 0; }
-  .rm-row .cond { grid-column: 1; grid-row: 1; font-size: 1rem; font-weight: 600; }
-  .rm-row .src { grid-column: 1; grid-row: 2; font-family: var(--mono); font-size: .63rem; letter-spacing: .03em; text-transform: uppercase; color: var(--mut); }
-  .rm-row .lvl { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; font-family: var(--mono); font-size: .59rem; letter-spacing: .06em; text-transform: uppercase; padding: .3rem .6rem; white-space: nowrap; }
-  .rm-row .lvl.high { background: var(--ink); color: var(--bg); }
-  .rm-row .lvl.mod { border: 1px solid var(--ink); color: var(--ink); }
-  .rm-row .lvl.low { border: 1px solid var(--line); color: var(--mut); }
-  .rm-foot { margin-top: 1.3rem; padding-top: 1.15rem; border-top: 1px solid var(--line); font-size: .92rem; color: var(--mut); line-height: 1.5; }
-
-  /* closing */
-  .close-head { font-size: clamp(2.6rem, 9vw, 8rem); font-weight: 800; letter-spacing: -0.045em; line-height: .95; }
-  .close-cta { margin-top: 2.6rem; display: flex; gap: .9rem; flex-wrap: wrap; }
-
-  footer { padding: 3rem 0; border-top: 1px solid var(--line); }
-  .foot-in { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .foot-note { font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; color: var(--mut); text-transform: uppercase; }
-
-  /* ---- what the score measures ---- */
-  .measures { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--inv-line); }
-  .m-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--inv-mut); margin-bottom: 1.6rem; }
-  .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem 2rem; }
-  @media (max-width: 760px) { .m-grid { grid-template-columns: 1fr; } }
-  .m-item span { display: block; font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; }
-  .m-item p { color: var(--inv-mut); font-size: .96rem; line-height: 1.5; }
-  .m-note { margin-top: 2rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .03em; color: var(--inv-mut); max-width: 62ch; line-height: 1.7; }
-
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal, h1.title .l > span, .hero-foot,
-    .riskmap .dot, .riskmap .link, .riskmap .rm-row { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
-  }
-
-  /* ===== motion pass ===== */
-  .reveal { transition-delay: var(--d, 0ms); }
-  nav { transition: box-shadow .3s ease; }
-  nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28); }
-  .scroll-prog { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--ink); transition: width .12s linear; }
-  .btn { transition: transform .18s ease, background .2s ease, color .2s ease, box-shadow .3s ease; }
-  .btn.lg:hover { box-shadow: 0 12px 26px -14px rgba(0,0,0,.5); }
-  .row h3 { transition: transform .3s ease; }
-  .row:hover h3 { transform: translateX(6px); }
-  .row:hover .rn { color: var(--ink); }
-  .price-row { position: relative; transition: padding-left .3s ease; }
-  .price-row::before { content: ""; position: absolute; left: -1.1rem; top: 50%; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); transform: translateY(-50%) scale(0); transition: transform .3s ease; }
-  .price-row:hover { padding-left: .6rem; }
-  .price-row:hover::before { transform: translateY(-50%) scale(1); }
-  .trust-item { transition: padding-left .3s ease; }
-  .trust-item:hover { padding-left: .5rem; }
-  .founder, .m-item { transition: transform .35s ease; }
-  .founder:hover, .m-item:hover { transform: translateY(-4px); }
-  .riskmap .dot { transform: scale(0); transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
-  .riskmap .link { transform: scaleX(0); transform-origin: left; transition: transform .5s ease; }
-  .riskmap .rm-row { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
-  .riskmap.in .dot { transform: scale(1); }
-  .riskmap.in .link { transform: scaleX(1); }
-  .riskmap.in .rm-row { opacity: 1; transform: none; }
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
 <nav>
   <div class="scroll-prog" id="scrollProg"></div>
   <div class="wrap nav-in">
-    <a class="brand" href="#top">Prevayu<sup>IN</sup></a>
+    <a class="brand" href="/">Prevayu<sup>IN</sup></a>
     <div class="nav-links">
-      <a href="#score">Health score</a>
-      <a href="#problem">The problem</a>
-      <a href="#genetics">Family risk</a>
-      <a href="#how">How it works</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/family-risk">Family risk</a>
+      <a href="/about">About</a>
     </div>
-    <a class="btn" href="#start">Start</a>
+    <a class="btn" href="/get-started">Get started</a>
   </div>
 </nav>
 
-<a id="top"></a>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow" style="margin-bottom:1.6rem"><span>Preventive health</span><b>Making India health conscious</b></div>
@@ -285,8 +55,8 @@
     <div class="hero-foot">
       <p>Prevayu maps the illnesses that run in your family, tracks your health as it changes, and helps you get ahead of what you are most likely to face. One guide who stays with you, explains it all in plain language, and keeps your whole family well for longer.</p>
       <div class="hero-cta">
-        <a class="btn lg" href="#start">Start with your family</a>
-        <a class="btn ghost lg" href="#how">How it works</a>
+        <a class="btn lg" href="/get-started">Start with your family</a>
+        <a class="btn ghost lg" href="/how-it-works">How it works</a>
       </div>
     </div>
   </div>
@@ -355,8 +125,9 @@
     <div class="stack-sm">
       <div class="eyebrow"><span>What runs in your family</span></div>
       <h2 class="big-head">The illness most likely to reach you is already in your family.</h2>
-      <p class="lede">Diabetes, heart disease and many cancers travel down generations. If a grandparent had it, the odds move to their children, and then to you. Prevayu reads what runs in your family and gets ahead of it, years before it would ever show up in a test. That is what prevention really means. Act on the risk you were born with, early enough to change how it ends.</p>
+      <p class="lede">Diabetes, heart disease and many cancers travel down generations. If a grandparent had it, the odds move to their children, and then to you. Prevayu reads what runs in your family and gets ahead of it, years before it would ever show up in a test.</p>
       <div class="cover"><b>One place for</b> Heart · Metabolic · Bone · Hormonal · Mental · Skin · Dental</div>
+      <a class="btn ghost" href="/family-risk" style="align-self:flex-start;margin-top:.4rem">See how family risk works</a>
     </div>
     <div class="card riskmap reveal">
       <div class="rm-head">Family risk map · The Reddy family</div>
@@ -403,6 +174,7 @@
       <div class="row reveal"><div class="rn">03</div><h3>A real roadmap</h3><p>Practical food and habit changes that fit your life. What to change, what to ignore, what not to miss.</p></div>
       <div class="row reveal"><div class="rn">04</div><h3>A monthly check-in</h3><p>You return to track progress and stay accountable, because you are well, not because you are sick.</p></div>
     </div>
+    <a class="btn ghost" href="/how-it-works" style="margin-top:2.5rem">Read how it works in full</a>
   </div>
 </section>
 
@@ -449,6 +221,7 @@
         <p>A design engineer who ships fast, moving into health for the reason that matters most. Owns the product that puts a guide in every family's pocket.</p>
       </div>
     </div>
+    <a class="btn ghost" href="/about" style="margin-top:2.5rem">Our story</a>
   </div>
 </section>
 
@@ -458,28 +231,27 @@
     <div class="eyebrow" style="margin-bottom:1.8rem"><span>Prevention over cure</span><b>Proven, not preached</b></div>
     <h2 class="close-head">Make your family<br>health conscious.</h2>
     <div class="close-cta">
-      <a class="btn lg" href="#top">Start with your family</a>
-      <a class="btn ghost lg" href="#how">How it works</a>
+      <a class="btn lg" href="/get-started">Start with your family</a>
+      <a class="btn ghost lg" href="/how-it-works">How it works</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-in">
-    <a class="brand" href="#top">Prevayu<sup>IN</sup></a>
+    <a class="brand" href="/">Prevayu<sup>IN</sup></a>
+    <div class="foot-links">
+      <a href="/how-it-works">How it works</a>
+      <a href="/family-risk">Family risk</a>
+      <a href="/about">About</a>
+      <a href="/get-started">Get started</a>
+    </div>
     <div class="foot-note">Preventive health guidance · Vizag, India</div>
   </div>
 </footer>
 
 <script>
   (function () {
-    // Reveal on scroll
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-
-    // ---- Interactive score chart ----
     var scores  = [68,69,71,70,73,75,74,77,79,80,81,82];
     var months  = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var W = 1000, H = 320, padY = 34;
@@ -495,7 +267,6 @@
     function x(i){ return (i/(scores.length-1)) * W; }
     function y(s){ return H - padY - ((s-minS)/(maxS-minS)) * (H - padY*2); }
 
-    // horizontal grid lines
     for (var g=0; g<=4; g++){
       var gy = padY + g*((H-padY*2)/4);
       grid.innerHTML += '<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'"></line>';
@@ -516,7 +287,6 @@
     scrub.addEventListener('input', function(){ render(parseInt(this.value,10)); });
     render(0);
 
-    // Auto-demo once when the section scrolls into view
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var played = false;
     var demoObs = new IntersectionObserver(function(es){
@@ -535,33 +305,6 @@
     demoObs.observe(document.getElementById('score'));
   })();
 </script>
-<script>
-  (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // stagger reveals within each parent
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      var kids = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList && c.classList.contains('reveal'); });
-      var i = kids.indexOf(el);
-      if (!reduce) el.style.transitionDelay = (i * 70) + 'ms';
-    });
-    // family risk map inner stagger
-    document.querySelectorAll('.riskmap').forEach(function (rm) {
-      rm.querySelectorAll('.dot').forEach(function (d, i) { d.style.transitionDelay = (i * 120) + 'ms'; });
-      rm.querySelectorAll('.link').forEach(function (l, i) { l.style.transitionDelay = (i * 120 + 80) + 'ms'; });
-      rm.querySelectorAll('.rm-row').forEach(function (r, i) { r.style.transitionDelay = (320 + i * 100) + 'ms'; });
-    });
-    // nav scroll progress + scrolled state
-    var nav = document.querySelector('nav');
-    var prog = document.getElementById('scrollProg');
-    function onScroll() {
-      var st = window.scrollY || document.documentElement.scrollTop || 0;
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      if (prog) prog.style.width = (h > 0 ? (st / h * 100) : 0) + '%';
-      if (nav) nav.classList.toggle('scrolled', st > 8);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
-</script>
+<script src="/app.js"></script>
 </body>
 </html>

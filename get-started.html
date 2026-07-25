@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get started · Prevayu</title>
+<meta name="description" content="Start with your family. Request your first Prevayu consult. We reach out on WhatsApp, build your family risk map, and set up your guide. No forced tests, pay only after your consultation.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="canonical" href="https://prevayu.vercel.app/get-started">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prevayu">
+<meta property="og:title" content="Start with your family · Prevayu">
+<meta property="og:description" content="Request your first consult. We build your family risk map and set up your guide. No forced tests, pay only after your consultation.">
+<meta property="og:url" content="https://prevayu.vercel.app/get-started">
+<meta property="og:image" content="https://prevayu.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prevayu.vercel.app/og-image.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="scroll-prog" id="scrollProg"></div>
+  <div class="wrap nav-in">
+    <a class="brand" href="/">Prevayu<sup>IN</sup></a>
+    <div class="nav-links">
+      <a href="/how-it-works">How it works</a>
+      <a href="/family-risk">Family risk</a>
+      <a href="/about">About</a>
+    </div>
+    <a class="btn" href="/get-started">Get started</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span>Get started</span></div>
+    <h1>Start with<br>your family.</h1>
+    <p class="lede">Tell us who you want to care for. Your guide reaches out on WhatsApp, we build your family risk map together, and set up your first consult. No pressure, no test-first.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <form class="form" id="leadForm" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="Asrith" required>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="phone">Phone or WhatsApp</label>
+          <input id="phone" name="phone" type="tel" placeholder="+91" required>
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="Visakhapatnam">
+        </div>
+      </div>
+      <div class="field">
+        <label for="who">Who is this for?</label>
+        <select id="who" name="who" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>My parents</option>
+          <option>My whole family</option>
+          <option>My mother</option>
+          <option>Myself</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="worry">What are you most worried about? (optional)</label>
+        <textarea id="worry" name="worry" placeholder="Diabetes runs in our family and I want to get ahead of it for my parents."></textarea>
+      </div>
+      <button class="btn lg" type="submit">Request your first consult</button>
+      <p class="form-note">We reach out on WhatsApp within a day. No spam, no forced tests, and you pay only after your consultation.</p>
+    </form>
+
+    <div class="form-success" id="formSuccess">
+      <h3>Thank you. We have your request.</h3>
+      <p>Your guide will message you on WhatsApp within a day to understand your family and set up your first consult. Prevention starts with one conversation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inv">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:1.6rem"><span>What happens next</span></div>
+    <div class="m-grid">
+      <div class="m-item reveal"><span>1 · We map your family</span><p>A short conversation about your family history and any reports you already have. That becomes your family risk map.</p></div>
+      <div class="m-item reveal"><span>2 · You meet your guide</span><p>One guide, backed by real doctors, who explains where you stand in plain language and answers your questions.</p></div>
+      <div class="m-item reveal"><span>3 · You start your roadmap</span><p>A practical plan of habits, food, and the few screenings that matter, plus a health score you watch improve.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <a class="brand" href="/">Prevayu<sup>IN</sup></a>
+    <div class="foot-links">
+      <a href="/how-it-works">How it works</a>
+      <a href="/family-risk">Family risk</a>
+      <a href="/about">About</a>
+      <a href="/get-started">Get started</a>
+    </div>
+    <div class="foot-note">Preventive health guidance · Vizag, India</div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
