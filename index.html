@@ -8,7 +8,7 @@
 <meta name="keywords" content="preventive health, family health, health guide India, health score, prevention, aging parents, women's health, menopause care">
 <meta name="author" content="Prevayu">
 <meta name="theme-color" content="#0a0a0a">
-<link rel="canonical" href="https://prevayu.com/">
+<link rel="canonical" href="https://prevayu.vercel.app/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -16,9 +16,9 @@
 <meta property="og:site_name" content="Prevayu">
 <meta property="og:title" content="Prevayu · A personal health guide for every Indian family">
 <meta property="og:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
-<meta property="og:url" content="https://prevayu.com/">
-<meta property="og:image" content="https://prevayu.com/og-image.png">
-<meta property="og:image:secure_url" content="https://prevayu.com/og-image.png">
+<meta property="og:url" content="https://prevayu.vercel.app/">
+<meta property="og:image" content="https://prevayu.vercel.app/og-image.png">
+<meta property="og:image:secure_url" content="https://prevayu.vercel.app/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Prevayu · A personal health guide for every Indian family">
 <meta name="twitter:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
-<meta name="twitter:image" content="https://prevayu.com/og-image.png">
+<meta name="twitter:image" content="https://prevayu.vercel.app/og-image.png">
 <style>
   :root {
     --bg: #ffffff;
@@ -214,6 +214,15 @@
   .foot-in { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
   .foot-note { font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; color: var(--mut); text-transform: uppercase; }
 
+  /* ---- what the score measures ---- */
+  .measures { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--inv-line); }
+  .m-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--inv-mut); margin-bottom: 1.6rem; }
+  .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem 2rem; }
+  @media (max-width: 760px) { .m-grid { grid-template-columns: 1fr; } }
+  .m-item span { display: block; font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; }
+  .m-item p { color: var(--inv-mut); font-size: .96rem; line-height: 1.5; }
+  .m-note { margin-top: 2rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .03em; color: var(--inv-mut); max-width: 62ch; line-height: 1.7; }
+
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
@@ -287,6 +296,16 @@
       <span class="hint">Jan</span>
       <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
       <span class="hint">Now</span>
+    </div>
+
+    <div class="measures">
+      <div class="m-label">What your score measures</div>
+      <div class="m-grid">
+        <div class="m-item reveal"><span>Family risk</span><p>What runs in your family, and the conditions you are more likely to face because of it.</p></div>
+        <div class="m-item reveal"><span>Your vitals</span><p>The few markers that actually matter for your risks, like blood sugar, blood pressure, and bone health.</p></div>
+        <div class="m-item reveal"><span>Daily habits</span><p>Food, movement, and sleep. The parts you control, and the ones that move your score the most.</p></div>
+      </div>
+      <p class="m-note">Reviewed by your guide, never a black box. It is a clear way to see where you stand and whether you are improving, not a diagnosis.</p>
     </div>
   </div>
 </section>
