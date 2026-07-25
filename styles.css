@@ -264,6 +264,13 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .riskmap.in .link { transform: scaleX(1); }
 .riskmap.in .rm-row { opacity: 1; transform: none; }
 
+/* ---- doctors / medical advisory ---- */
+.docs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; margin-top: 3rem; }
+@media (max-width: 860px) { .docs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .docs { grid-template-columns: 1fr; } }
+.docs .founder h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: .4rem 0 .5rem; }
+.docs .founder p { font-size: .96rem; }
+
 /* ===== cross-page transitions (View Transitions API) ===== */
 @view-transition { navigation: auto; }
 nav { view-transition-name: site-nav; }
