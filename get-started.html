@@ -44,7 +44,8 @@
 
 <section>
   <div class="wrap">
-    <form class="form" id="leadForm" novalidate>
+    <form class="form" id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New Prevayu lead">
       <div class="field">
         <label for="name">Your name</label>
         <input id="name" name="name" type="text" placeholder="Asrith" required>
@@ -75,6 +76,7 @@
       </div>
       <button class="btn lg" type="submit">Request your first consult</button>
       <p class="form-note">We reach out on WhatsApp within a day. No spam, no forced tests, and you pay only after your consultation.</p>
+      <p class="form-note" id="formError" style="display:none">Something went wrong sending that. Please try again, or message us on WhatsApp.</p>
     </form>
 
     <div class="form-success" id="formSuccess">

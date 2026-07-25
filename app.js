@@ -33,15 +33,30 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // simple client-side form handler (shows success; wire to a backend later)
+  // lead form -> Formspree (falls back to demo success until a real endpoint is set)
   var form = document.getElementById('leadForm');
   if (form) {
+    var okBox = document.getElementById('formSuccess');
+    var errBox = document.getElementById('formError');
+    function showSuccess() {
+      form.style.display = 'none';
+      if (okBox) { okBox.classList.add('show'); okBox.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      form.style.display = 'none';
-      var ok = document.getElementById('formSuccess');
-      if (ok) { ok.classList.add('show'); ok.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
+      if (errBox) errBox.style.display = 'none';
+      var endpoint = form.getAttribute('action') || '';
+      if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) { showSuccess(); return; } // demo mode until Formspree ID is set
+      var btn = form.querySelector('button[type=submit]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (res) { if (res.ok) { showSuccess(); } else { throw new Error('bad response'); } })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          if (errBox) errBox.style.display = 'block';
+        });
     });
   }
 })();
