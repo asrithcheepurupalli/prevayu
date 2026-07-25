@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prevayu · A personal health guide for every Indian family</title>
-<meta name="description" content="Prevayu is a personal health guide for every Indian family. Understand your family's health before anything goes wrong, with one guide who stays, a living health score, and prevention over cure.">
+<meta name="description" content="Prevayu is a personal health guide for every Indian family. We map the illnesses that run in your family, track your health with a living score, and help you prevent them years early. One guide who stays, prevention over cure.">
 <meta name="keywords" content="preventive health, family health, health guide India, health score, prevention, aging parents, women's health, menopause care">
 <meta name="author" content="Prevayu">
 <meta name="theme-color" content="#0a0a0a">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prevayu">
 <meta property="og:title" content="Prevayu · A personal health guide for every Indian family">
-<meta property="og:description" content="Understand your family's health before anything goes wrong. One guide who stays, a living health score, prevention over cure.">
+<meta property="og:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
 <meta property="og:url" content="https://prevayu.com/">
 <meta property="og:image" content="https://prevayu.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
 <meta property="og:image:alt" content="Prevayu. A personal health guide for every Indian family.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Prevayu · A personal health guide for every Indian family">
-<meta name="twitter:description" content="Understand your family's health before anything goes wrong. One guide who stays, a living health score, prevention over cure.">
+<meta name="twitter:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
 <meta name="twitter:image" content="https://prevayu.com/og-image.png">
 <style>
   :root {
@@ -183,6 +183,27 @@
   .founder h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; margin: .5rem 0 .7rem; }
   .founder p { color: var(--mut); font-size: 1.02rem; line-height: 1.5; }
 
+  /* ---- genetics / family risk map ---- */
+  .cover { display: flex; flex-wrap: wrap; gap: .5rem .7rem; margin-top: .6rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); }
+  .cover b { color: var(--ink); font-weight: 600; }
+  .riskmap { padding: 1.7rem 1.7rem 1.6rem; }
+  .rm-head { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: 1.4rem; }
+  .lineage { display: flex; align-items: flex-start; gap: .5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+  .lineage .node { display: flex; flex-direction: column; align-items: center; }
+  .lineage .node .dot { width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--ink); margin-bottom: .5rem; }
+  .lineage .node.carry .dot { background: var(--ink); }
+  .lineage .node span { font-family: var(--mono); font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; color: var(--mut); }
+  .lineage .link { flex: 1; height: 2px; background: var(--ink); opacity: .28; margin-top: 6px; }
+  .rm-row { display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
+  .rm-row:first-of-type { border-top: none; padding-top: 0; }
+  .rm-row .cond { grid-column: 1; grid-row: 1; font-size: 1rem; font-weight: 600; }
+  .rm-row .src { grid-column: 1; grid-row: 2; font-family: var(--mono); font-size: .63rem; letter-spacing: .03em; text-transform: uppercase; color: var(--mut); }
+  .rm-row .lvl { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; font-family: var(--mono); font-size: .59rem; letter-spacing: .06em; text-transform: uppercase; padding: .3rem .6rem; white-space: nowrap; }
+  .rm-row .lvl.high { background: var(--ink); color: var(--bg); }
+  .rm-row .lvl.mod { border: 1px solid var(--ink); color: var(--ink); }
+  .rm-row .lvl.low { border: 1px solid var(--line); color: var(--mut); }
+  .rm-foot { margin-top: 1.3rem; padding-top: 1.15rem; border-top: 1px solid var(--line); font-size: .92rem; color: var(--mut); line-height: 1.5; }
+
   /* closing */
   .close-head { font-size: clamp(2.6rem, 9vw, 8rem); font-weight: 800; letter-spacing: -0.045em; line-height: .95; }
   .close-cta { margin-top: 2.6rem; display: flex; gap: .9rem; flex-wrap: wrap; }
@@ -207,8 +228,8 @@
     <div class="nav-links">
       <a href="#score">Health score</a>
       <a href="#problem">The problem</a>
+      <a href="#genetics">Family risk</a>
       <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
     </div>
     <a class="btn" href="#start">Start</a>
   </div>
@@ -224,7 +245,7 @@
       <span class="l"><span><em>every</em> Indian family.</span></span>
     </h1>
     <div class="hero-foot">
-      <p>Understand your family's health before anything goes wrong. One guide who stays with you and helps you prevent, not react.</p>
+      <p>Prevayu maps the illnesses that run in your family, tracks your health as it changes, and helps you get ahead of what you are most likely to face. One guide who stays with you, explains it all in plain language, and keeps your whole family well for longer.</p>
       <div class="hero-cta">
         <a class="btn lg" href="#start">Start with your family</a>
         <a class="btn ghost lg" href="#how">How it works</a>
@@ -280,6 +301,33 @@
   </div>
 </section>
 
+<!-- Genetics -->
+<section id="genetics">
+  <div class="wrap split">
+    <div class="stack-sm">
+      <div class="eyebrow"><span>What runs in your family</span></div>
+      <h2 class="big-head">The illness most likely to reach you is already in your family.</h2>
+      <p class="lede">Diabetes, heart disease and many cancers travel down generations. If a grandparent had it, the odds move to their children, and then to you. Prevayu reads what runs in your family and gets ahead of it, years before it would ever show up in a test. That is what prevention really means. Act on the risk you were born with, early enough to change how it ends.</p>
+      <div class="cover"><b>One place for</b> Heart · Metabolic · Bone · Hormonal · Mental · Skin · Dental</div>
+    </div>
+    <div class="card riskmap reveal">
+      <div class="rm-head">Family risk map · The Reddy family</div>
+      <div class="lineage">
+        <div class="node carry"><div class="dot"></div><span>Grandfather</span></div>
+        <div class="link"></div>
+        <div class="node carry"><div class="dot"></div><span>Mother</span></div>
+        <div class="link"></div>
+        <div class="node"><div class="dot"></div><span>You</span></div>
+      </div>
+      <div class="rm-row"><div class="cond">Type 2 diabetes</div><div class="src">Grandfather, mother</div><div class="lvl high">Elevated</div></div>
+      <div class="rm-row"><div class="cond">Heart disease</div><div class="src">Father</div><div class="lvl mod">Moderate</div></div>
+      <div class="rm-row"><div class="cond">Bone loss</div><div class="src">Mother</div><div class="lvl mod">Watching</div></div>
+      <div class="rm-row"><div class="cond">Breast cancer</div><div class="src">Aunt</div><div class="lvl low">Screening early</div></div>
+      <div class="rm-foot">We plan around these ten or more years early, while they are still easy to change.</div>
+    </div>
+  </div>
+</section>
+
 <!-- Guide -->
 <section id="guide">
   <div class="wrap split">
@@ -302,7 +350,7 @@
   <div class="wrap">
     <h2 class="big-head">Four steps.<br>No pressure. No test-first.</h2>
     <div class="rows">
-      <div class="row reveal"><div class="rn">01</div><h3>Map your health</h3><p>Age, habits, family history, existing reports. Only the evaluations that matter for you, each with a clear reason.</p></div>
+      <div class="row reveal"><div class="rn">01</div><h3>Map what runs in your family</h3><p>We start with your family history, the illnesses that travel down generations, then your habits and existing reports. That tells us the risks that actually matter for you.</p></div>
       <div class="row reveal"><div class="rn">02</div><h3>Explain, don't scare</h3><p>Plain language on what is reversible, what needs attention, and what is genuinely nothing to worry about.</p></div>
       <div class="row reveal"><div class="rn">03</div><h3>A real roadmap</h3><p>Practical food and habit changes that fit your life. What to change, what to ignore, what not to miss.</p></div>
       <div class="row reveal"><div class="rn">04</div><h3>A monthly check-in</h3><p>You return to track progress and stay accountable, because you are well, not because you are sick.</p></div>
