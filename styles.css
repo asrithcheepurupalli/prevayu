@@ -271,6 +271,18 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .docs .founder h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: .4rem 0 .5rem; }
 .docs .founder p { font-size: .96rem; }
 
+/* ---- family care card ---- */
+.famcard { padding: 1.7rem 1.7rem 1.6rem; border: 1px solid var(--line); }
+.fam-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 0; border-top: 1px solid var(--line); }
+.fam-row:first-of-type { border-top: none; padding-top: .3rem; }
+.fam-who b { display: block; font-size: 1.05rem; font-weight: 700; }
+.fam-who span { font-family: var(--mono); font-size: .63rem; letter-spacing: .04em; text-transform: uppercase; color: var(--mut); }
+.fam-status { display: flex; align-items: center; gap: .9rem; }
+.fscore { font-family: var(--sans); font-weight: 800; font-size: 1.55rem; font-variant-numeric: tabular-nums; line-height: 1; }
+.pill { font-family: var(--mono); font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; padding: .32rem .55rem; white-space: nowrap; }
+.pill.ok { border: 1px solid var(--line); color: var(--mut); }
+.pill.watch { background: var(--ink); color: var(--bg); }
+
 /* ---- outcome trajectory ---- */
 #traj { display: block; width: 100%; height: clamp(220px, 32vw, 380px); overflow: visible; }
 #trajGrid line { stroke: var(--line); stroke-width: 1; }
