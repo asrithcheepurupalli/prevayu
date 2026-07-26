@@ -147,6 +147,43 @@
   </div>
 </section>
 
+<!-- Act -->
+<section id="act">
+  <div class="wrap">
+    <div class="eyebrow"><span>Knowing is where most stop</span></div>
+    <h2 class="big-head" style="margin-top:1rem">It's what we do next<br>that changes anything.</h2>
+    <p class="lede" style="margin-top:1.2rem">Being told you're at risk is not the point, on its own it just creates fear. The whole product is what happens after.</p>
+    <div class="rows">
+      <div class="row reveal"><div class="rn">01</div><h3>A prevention plan built for your risks</h3><p>Only the screenings that matter for you, on a schedule, plus the food, habit, and lifestyle changes that actually move your specific risks. Supplements only where they genuinely help.</p></div>
+      <div class="row reveal"><div class="rn">02</div><h3>Catch it early, when it's still easy</h3><p>For the risks we cannot prevent, targeted screening catches them at the earliest stage, when they are simple to treat instead of life-changing. Stage zero, not stage three.</p></div>
+      <div class="row reveal"><div class="rn">03</div><h3>Habits that actually stick</h3><p>The hard part of prevention is doing it, week after week. Your guide keeps the whole family on track with plain nudges and check-ins, so the plan does not die in a drawer.</p></div>
+      <div class="row reveal"><div class="rn">04</div><h3>Proof it's working</h3><p>Your health score rises and your risks step down over time, from elevated to moderate to watched. You see prevention working, not just hear that it should.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Outcome -->
+<section id="outcome">
+  <div class="wrap">
+    <div class="eyebrow"><span>The whole point</span></div>
+    <h2 class="big-head" style="margin-top:1rem">The disease that runs in your family can stop with you.</h2>
+    <p class="lede" style="margin-top:1.2rem">Prevention is not about worry, it's about bending the line. We help you prevent it, delay it by years, or catch it so early it's easily beaten, and add healthy years your family would otherwise lose.</p>
+    <div class="chart-box" style="margin-top:2.5rem">
+      <svg id="traj" viewBox="0 0 1000 380" preserveAspectRatio="none" aria-hidden="true">
+        <g id="trajGrid"></g>
+        <polyline id="trajWithout" points=""></polyline>
+        <polyline id="trajWith" points=""></polyline>
+        <circle id="trajDot" cx="0" cy="0" r="7"></circle>
+      </svg>
+      <div class="traj-x"><span>Today</span><span>5 years</span><span>10 years</span><span>15 years</span><span>20 years</span></div>
+      <div class="traj-legend">
+        <span class="lg with"><i></i> With Prevayu, health held and risks bent down</span>
+        <span class="lg without"><i></i> Without, the illness arrives on schedule</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Guide -->
 <section id="guide">
   <div class="wrap split">
@@ -304,6 +341,46 @@
       });
     }, { threshold: 0.4 });
     demoObs.observe(document.getElementById('score'));
+  })();
+</script>
+<script>
+  (function () {
+    var withArr    = [76,78,79,80,81,82,83,84,84,85,85,86,86,87,87,88,88,89,89,90,90];
+    var withoutArr = [76,75,73,71,68,64,60,55,50,46,42,39,37,35,34,33,32,31,30,30,29];
+    var W = 1000, H = 380, pad = 30, minV = 25, maxV = 95;
+    var grid = document.getElementById('trajGrid');
+    var lw = document.getElementById('trajWith');
+    var lo = document.getElementById('trajWithout');
+    var dot = document.getElementById('trajDot');
+    if (!lw) return;
+    function x(i){ return i/(withArr.length-1) * W; }
+    function y(v){ return H - pad - (v-minV)/(maxV-minV) * (H - 2*pad); }
+    for (var g=0; g<=4; g++){ var gy = pad + g*((H-2*pad)/4); grid.innerHTML += '<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'"></line>'; }
+    function pts(arr){ var p=[]; for (var i=0;i<arr.length;i++){ p.push(x(i)+','+y(arr[i])); } return p.join(' '); }
+    lw.setAttribute('points', pts(withArr));
+    lo.setAttribute('points', pts(withoutArr));
+    dot.setAttribute('cx', x(withArr.length-1));
+    dot.setAttribute('cy', y(withArr[withArr.length-1]));
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    [lw, lo].forEach(function (el) {
+      var len = el.getTotalLength();
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = reduce ? 0 : len;
+      el.style.transition = 'stroke-dashoffset 1.7s ease';
+    });
+    dot.style.opacity = reduce ? 1 : 0;
+    dot.style.transition = 'opacity .4s ease 1.5s';
+    var obs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          lw.style.strokeDashoffset = 0;
+          lo.style.strokeDashoffset = 0;
+          dot.style.opacity = 1;
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    obs.observe(document.getElementById('outcome'));
   })();
 </script>
 <script src="/app.js"></script>

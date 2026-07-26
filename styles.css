@@ -271,6 +271,19 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .docs .founder h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: .4rem 0 .5rem; }
 .docs .founder p { font-size: .96rem; }
 
+/* ---- outcome trajectory ---- */
+#traj { display: block; width: 100%; height: clamp(220px, 32vw, 380px); overflow: visible; }
+#trajGrid line { stroke: var(--line); stroke-width: 1; }
+#trajWithout { fill: none; stroke: var(--faint); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+#trajWith { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#trajDot { fill: var(--bg); stroke: var(--ink); stroke-width: 3; }
+.traj-x { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .64rem; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin-top: .9rem; }
+.traj-legend { display: flex; gap: 1.8rem; margin-top: 1.4rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); flex-wrap: wrap; }
+.traj-legend .lg { display: flex; align-items: center; gap: .55rem; }
+.traj-legend .lg i { width: 26px; height: 0; display: inline-block; }
+.traj-legend .with i { border-top: 4px solid var(--ink); }
+.traj-legend .without i { border-top: 2px solid var(--faint); }
+
 /* ===== cross-page transitions (View Transitions API) ===== */
 @view-transition { navigation: auto; }
 nav { view-transition-name: site-nav; }
