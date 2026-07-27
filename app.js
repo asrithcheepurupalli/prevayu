@@ -33,6 +33,40 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // mobile menu (built from the existing nav)
+  var navIn = document.querySelector('nav .nav-in');
+  if (navIn) {
+    var linksEl = navIn.querySelector('.nav-links');
+    var ctaEl = navIn.querySelector('.btn');
+    var burger = document.createElement('button');
+    burger.className = 'nav-burger';
+    burger.setAttribute('aria-label', 'Toggle menu');
+    burger.innerHTML = '<span></span><span></span>';
+    navIn.appendChild(burger);
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    if (linksEl) {
+      linksEl.querySelectorAll('a').forEach(function (a) {
+        var na = document.createElement('a');
+        na.href = a.getAttribute('href');
+        na.textContent = a.textContent;
+        overlay.appendChild(na);
+      });
+    }
+    if (ctaEl) {
+      var nc = document.createElement('a');
+      nc.href = ctaEl.getAttribute('href');
+      nc.textContent = ctaEl.textContent;
+      nc.className = 'ov-cta';
+      overlay.appendChild(nc);
+    }
+    document.body.appendChild(overlay);
+    burger.addEventListener('click', function () { document.body.classList.toggle('menu-open'); });
+    overlay.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { document.body.classList.remove('menu-open'); });
+    });
+  }
+
   // lead form -> Formspree (falls back to demo success until a real endpoint is set)
   var form = document.getElementById('leadForm');
   if (form) {
