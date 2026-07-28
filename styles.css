@@ -296,6 +296,15 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .traj-legend .with i { border-top: 4px solid var(--ink); }
 .traj-legend .without i { border-top: 2px solid var(--faint); }
 
+/* ---- chapter spine ---- */
+.spine { position: fixed; left: 1.7rem; top: 50%; transform: translateY(-50%); z-index: 45; display: flex; flex-direction: column; gap: 1.1rem; }
+.spine-item { display: flex; align-items: center; gap: .6rem; }
+.spine-item .tick { width: 14px; height: 1px; background: var(--faint); transition: width .35s ease, background .35s ease; }
+.spine-item .sn { font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; color: var(--faint); transition: color .35s ease; }
+.spine-item.on .tick { width: 30px; background: var(--ink); }
+.spine-item.on .sn { color: var(--ink); }
+@media (max-width: 1280px) { .spine { display: none; } }
+
 /* ---- score inputs stage ---- */
 .scorecard-stage .sc-num { display: flex; align-items: baseline; gap: .7rem; margin-bottom: 1.8rem; }
 .scorecard-stage .sc-num b { font-size: clamp(3.4rem, 8vw, 5.4rem); font-weight: 800; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1; }

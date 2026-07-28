@@ -65,6 +65,39 @@
     });
   }
 
+  // chapter spine (landing only, wide screens)
+  if (document.getElementById('score-ch') && window.innerWidth > 1280) {
+    var chapters = [
+      { id: 'genetics', n: '01' },
+      { id: 'act', n: '02' },
+      { id: 'score-ch', n: '03' },
+      { id: 'outcome', n: '04' },
+      { id: 'parents', n: '05' }
+    ];
+    var spine = document.createElement('nav');
+    spine.className = 'spine';
+    spine.setAttribute('aria-hidden', 'true');
+    chapters.forEach(function (c) {
+      if (!document.getElementById(c.id)) return;
+      var a = document.createElement('a');
+      a.href = '#' + c.id;
+      a.className = 'spine-item';
+      a.setAttribute('data-for', c.id);
+      a.innerHTML = '<span class="tick"></span><span class="sn">' + c.n + '</span>';
+      spine.appendChild(a);
+    });
+    document.body.appendChild(spine);
+    var sItems = spine.querySelectorAll('.spine-item');
+    var spineObs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          sItems.forEach(function (it) { it.classList.toggle('on', it.getAttribute('data-for') === e.target.id); });
+        }
+      });
+    }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+    chapters.forEach(function (c) { var el = document.getElementById(c.id); if (el) spineObs.observe(el); });
+  }
+
   // mobile menu (built from the existing nav)
   var navIn = document.querySelector('nav .nav-in');
   if (navIn) {

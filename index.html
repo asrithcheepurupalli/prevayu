@@ -63,42 +63,6 @@
   </div>
 </header>
 
-<!-- Interactive score -->
-<section id="score" class="inv">
-  <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:2rem"><span>The health score</span><b>Drag to watch a year of prevention</b></div>
-    <div class="score-top">
-      <div class="score-readout">
-        <span class="score-num" id="scoreNum">68</span>
-        <div class="score-meta">
-          <b id="scoreMonth">January</b>
-          <span id="scoreDelta">baseline</span><br>
-          The Reddy family
-        </div>
-      </div>
-      <p class="lede" style="max-width:34ch">One number your whole family understands. It rises as habits improve. That is the entire point of prevention.</p>
-    </div>
-
-    <div class="chart-box">
-      <svg id="chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
-        <g class="grid" id="grid"></g>
-        <polyline id="scoreLine" points=""></polyline>
-        <circle id="scoreDot" cx="0" cy="0" r="7"></circle>
-      </svg>
-      <div class="month-marks">
-        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Now</span>
-      </div>
-    </div>
-
-    <div class="scrub-row">
-      <span class="hint">Jan</span>
-      <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
-      <span class="hint">Now</span>
-    </div>
-
-  </div>
-</section>
-
 <!-- Problem -->
 <section id="problem">
   <div class="wrap">
@@ -200,10 +164,43 @@
   </div>
 </section>
 
+<!-- Score live: watch it rise -->
+<section id="score-live" class="inv">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:2rem"><span>The score, live</span><b>Drag to watch a year of prevention</b></div>
+    <div class="score-top">
+      <div class="score-readout">
+        <span class="score-num" id="scoreNum">68</span>
+        <div class="score-meta">
+          <b id="scoreMonth">January</b>
+          <span id="scoreDelta">baseline</span><br>
+          The Reddy family
+        </div>
+      </div>
+      <p class="lede" style="max-width:34ch">Now watch it move. One year on the roadmap, and the number climbs as the family gets ahead of what they inherited.</p>
+    </div>
+    <div class="chart-box">
+      <svg id="chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+        <g class="grid" id="grid"></g>
+        <polyline id="scoreLine" points=""></polyline>
+        <circle id="scoreDot" cx="0" cy="0" r="7"></circle>
+      </svg>
+      <div class="month-marks">
+        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Now</span>
+      </div>
+    </div>
+    <div class="scrub-row">
+      <span class="hint">Jan</span>
+      <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
+      <span class="hint">Now</span>
+    </div>
+  </div>
+</section>
+
 <!-- Outcome -->
 <section id="outcome">
   <div class="wrap">
-    <div class="eyebrow"><span>The whole point</span></div>
+    <div class="eyebrow"><span>Chapter four · Over the years</span></div>
     <h2 class="big-head" style="margin-top:1rem">The disease that runs in your family can stop with you.</h2>
     <p class="lede" style="margin-top:1.2rem">Prevention is not about worry, it's about bending the line. We help you prevent it, delay it by years, or catch it so early it's easily beaten, and add healthy years your family would otherwise lose.</p>
     <div class="chart-box" style="margin-top:2.5rem">
@@ -258,7 +255,7 @@
 <section id="parents">
   <div class="wrap split">
     <div class="stack-sm">
-      <div class="eyebrow"><span>For the ones you worry about</span></div>
+      <div class="eyebrow"><span>Chapter five · Your whole family</span></div>
       <h2 class="big-head">Care for your parents,<br>from anywhere.</h2>
       <p class="lede">You're in another city. They say they're fine. Prevayu keeps watch on the people you love, looks after their health day to day, and messages you the moment something needs you. One family, one guide, wherever you all are.</p>
     </div>
@@ -411,7 +408,7 @@
         }
       });
     }, { threshold: 0.4 });
-    demoObs.observe(document.getElementById('score'));
+    var _scEl = document.getElementById('score-live'); if (_scEl) demoObs.observe(_scEl);
   })();
 </script>
 <script>
