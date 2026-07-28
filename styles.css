@@ -296,6 +296,17 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .traj-legend .with i { border-top: 4px solid var(--ink); }
 .traj-legend .without i { border-top: 2px solid var(--faint); }
 
+/* ---- score inputs stage ---- */
+.scorecard-stage .sc-num { display: flex; align-items: baseline; gap: .7rem; margin-bottom: 1.8rem; }
+.scorecard-stage .sc-num b { font-size: clamp(3.4rem, 8vw, 5.4rem); font-weight: 800; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+.scorecard-stage .sc-num span { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); }
+.sc-input { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 1rem; padding: .75rem 0; }
+.sc-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); }
+.sc-bar { height: 8px; background: var(--line); position: relative; overflow: hidden; }
+.sc-bar i { position: absolute; left: 0; top: 0; height: 100%; background: var(--ink); width: var(--w); transition: width 1s ease .15s; }
+.scrolly-ch.scrolly .sc-input .sc-bar i { width: 0; }
+.scrolly-ch.scrolly .sc-input.on .sc-bar i { width: var(--w); }
+
 /* ---- story chapters / scrollytelling ---- */
 .worry { padding: clamp(4rem,10vw,9rem) 0; border-top: 1px solid var(--line); }
 .chapter { border-top: 1px solid var(--line); padding: clamp(3rem,6vw,5rem) 0 0; }
