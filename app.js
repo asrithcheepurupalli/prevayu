@@ -1,6 +1,21 @@
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // smooth scroll (Lenis), skipped for reduced motion
+  if (!reduce) {
+    var ls = document.createElement('script');
+    ls.src = 'https://unpkg.com/lenis@1/dist/lenis.min.js';
+    ls.onload = function () {
+      try {
+        var lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+        function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        window.__lenis = lenis;
+      } catch (e) {}
+    };
+    document.head.appendChild(ls);
+  }
+
   // stagger reveals within each parent (set delays before observing)
   document.querySelectorAll('.reveal').forEach(function (el) {
     var kids = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList && c.classList.contains('reveal'); });
