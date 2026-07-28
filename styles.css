@@ -296,6 +296,27 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .traj-legend .with i { border-top: 4px solid var(--ink); }
 .traj-legend .without i { border-top: 2px solid var(--faint); }
 
+/* ---- story chapters / scrollytelling ---- */
+.worry { padding: clamp(4rem,10vw,9rem) 0; border-top: 1px solid var(--line); }
+.chapter { border-top: 1px solid var(--line); padding: clamp(3rem,6vw,5rem) 0 0; }
+.ch-head { margin-bottom: 2.5rem; }
+.ch-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(2rem,5vw,5rem); align-items: start; }
+@media (max-width: 900px) { .ch-grid { grid-template-columns: 1fr; } }
+.stage { position: sticky; top: 66px; height: calc(100vh - 66px); display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 900px) { .stage { position: relative; top: 0; height: auto; padding: 1rem 0 2.5rem; } }
+.steps .step { min-height: 86vh; display: flex; align-items: center; }
+@media (max-width: 900px) { .steps .step { min-height: auto; padding: 1.6rem 0; } }
+.step .k { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-bottom: .9rem; }
+.step h3 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 700; }
+.step p { color: var(--mut); font-size: 1.1rem; line-height: 1.55; margin-top: 1rem; max-width: 42ch; }
+.rmap-card { border: 1px solid var(--line); padding: 1.7rem; background: var(--bg); }
+.scrolly-ch.scrolly [data-appear] { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.scrolly-ch.scrolly [data-appear].on { opacity: 1; transform: none; }
+@media (min-width: 901px) {
+  .scrolly-ch.scrolly .step { opacity: .32; transition: opacity .45s ease; }
+  .scrolly-ch.scrolly .step.active { opacity: 1; }
+}
+
 /* ---- hero proof ---- */
 .proof { margin-top: 2.4rem; display: inline-flex; align-items: center; gap: .6rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); }
 .proof .pdot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); flex: none; }

@@ -48,6 +48,23 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // scrollytelling: pinned stage + steps drive what's revealed (desktop only)
+  if (window.innerWidth > 900) {
+    document.querySelectorAll('.scrolly-ch').forEach(function (ch) {
+      ch.classList.add('scrolly');
+      var steps = Array.prototype.slice.call(ch.querySelectorAll('.step'));
+      var appears = ch.querySelectorAll('[data-appear]');
+      function setActive(n, el) {
+        appears.forEach(function (a) { a.classList.toggle('on', (+a.getAttribute('data-appear')) <= n); });
+        steps.forEach(function (s) { s.classList.toggle('active', s === el); });
+      }
+      var so = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { setActive(+e.target.getAttribute('data-step'), e.target); } });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      steps.forEach(function (s) { so.observe(s); });
+    });
+  }
+
   // mobile menu (built from the existing nav)
   var navIn = document.querySelector('nav .nav-in');
   if (navIn) {
