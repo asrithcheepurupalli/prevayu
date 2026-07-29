@@ -74,7 +74,7 @@
       { id: 'outcome', n: '04' },
       { id: 'parents', n: '05' }
     ];
-    var spine = document.createElement('nav');
+    var spine = document.createElement('div');
     spine.className = 'spine';
     spine.setAttribute('aria-hidden', 'true');
     chapters.forEach(function (c) {
@@ -89,11 +89,10 @@
     document.body.appendChild(spine);
     var sItems = spine.querySelectorAll('.spine-item');
     var spineObs = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting) {
-          sItems.forEach(function (it) { it.classList.toggle('on', it.getAttribute('data-for') === e.target.id); });
-        }
-      });
+      es.forEach(function (e) { e.target._inview = e.isIntersecting; });
+      var activeId = null;
+      chapters.forEach(function (c) { var el = document.getElementById(c.id); if (el && el._inview) activeId = c.id; });
+      sItems.forEach(function (it) { it.classList.toggle('on', it.getAttribute('data-for') === activeId); });
     }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
     chapters.forEach(function (c) { var el = document.getElementById(c.id); if (el) spineObs.observe(el); });
   }

@@ -63,24 +63,45 @@
   </div>
 </header>
 
-<!-- Problem -->
-<section id="problem">
-  <div class="wrap">
-    <h2 class="big-head">Care today only<br>shows up too late.</h2>
-    <div class="rows">
-      <div class="row reveal"><div class="rn">01</div><h3>Reports without meaning</h3><p>A number comes back high or low, and nobody explains the cause, the risk, or what to actually do next.</p></div>
-      <div class="row reveal"><div class="rn">02</div><h3>A system that only reacts</h3><p>Hospitals wait for something to break. There is no trusted first stop for understanding your health before then.</p></div>
-      <div class="row reveal"><div class="rn">03</div><h3>Parents who say they're fine</h3><p>Mothers at menopause and aging parents get told it is just age. Silent risk builds for years with nobody watching.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Chapter 0: the worry -->
+<!-- Chapter 0: the worry (story opens here) -->
 <section class="worry">
   <div class="wrap">
     <div class="eyebrow reveal"><span>Meet the Reddys</span></div>
     <h2 class="big-head reveal" style="margin-top:1rem;max-width:20ch">Diabetes and heart disease run in their family.</h2>
     <p class="lede reveal" style="margin-top:1.4rem;max-width:52ch">Amma's mother had both. Her father's heart gave out early. They have always known it hangs over them, and never known what to actually do about it. Most families don't. Here is what Prevayu does.</p>
+  </div>
+</section>
+
+<!-- Score live: the hook (second beat) -->
+<section id="score-live" class="inv">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:2rem"><span>Where it takes them</span><b>Drag to watch a year of prevention</b></div>
+    <div class="score-top">
+      <div class="score-readout">
+        <span class="score-num" id="scoreNum">68</span>
+        <div class="score-meta">
+          <b id="scoreMonth">January</b>
+          <span id="scoreDelta">baseline</span><br>
+          The Reddy family
+        </div>
+      </div>
+      <p class="lede" style="max-width:34ch">This is their health score. Drag through the year and watch it climb as they get ahead of what they inherited. That rising line is the whole point. Here is how we get there.</p>
+    </div>
+    <div class="chart-box">
+      <svg id="chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+        <g class="grid" id="grid"></g>
+        <polyline id="scoreLine" points=""></polyline>
+        <circle id="scoreDot" cx="0" cy="0" r="7"></circle>
+      </svg>
+      <div class="month-marks">
+        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Now</span>
+      </div>
+    </div>
+    <div class="scrub-row">
+      <span class="hint">Jan</span>
+      <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
+      <span class="hint">Now</span>
+    </div>
   </div>
 </section>
 
@@ -160,39 +181,6 @@
         <div class="step" data-step="3"><span class="k">Input four</span><h3>Your trend</h3><p>Are you getting better, month over month? Direction matters as much as the number, and it rewards you for doing the work.</p></div>
         <div class="step" data-step="4"><span class="k">Together</span><h3>A score that rises as you improve</h3><p>Doctor-reviewed, personal to your risks, and never a diagnosis. Just a clear, honest way to see where your family stands and whether prevention is working.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Score live: watch it rise -->
-<section id="score-live" class="inv">
-  <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:2rem"><span>The score, live</span><b>Drag to watch a year of prevention</b></div>
-    <div class="score-top">
-      <div class="score-readout">
-        <span class="score-num" id="scoreNum">68</span>
-        <div class="score-meta">
-          <b id="scoreMonth">January</b>
-          <span id="scoreDelta">baseline</span><br>
-          The Reddy family
-        </div>
-      </div>
-      <p class="lede" style="max-width:34ch">Now watch it move. One year on the roadmap, and the number climbs as the family gets ahead of what they inherited.</p>
-    </div>
-    <div class="chart-box">
-      <svg id="chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
-        <g class="grid" id="grid"></g>
-        <polyline id="scoreLine" points=""></polyline>
-        <circle id="scoreDot" cx="0" cy="0" r="7"></circle>
-      </svg>
-      <div class="month-marks">
-        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Now</span>
-      </div>
-    </div>
-    <div class="scrub-row">
-      <span class="hint">Jan</span>
-      <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
-      <span class="hint">Now</span>
     </div>
   </div>
 </section>
