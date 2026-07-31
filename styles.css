@@ -8,8 +8,8 @@
   --inv-ink: #ffffff;
   --inv-mut: #a3a3a3;
   --inv-line: #2a2a2a;
-  --sans: "Inter", "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", "Menlo", "Cascadia Code", monospace;
+  --sans: "Helvetica Neue", "Helvetica", "Inter", "Arial", system-ui, sans-serif;
+  --mono: "SF Mono", ui-monospace, "Menlo", "JetBrains Mono", "Cascadia Code", monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root {
