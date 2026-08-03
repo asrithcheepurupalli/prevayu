@@ -310,6 +310,16 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .sc-reveal .sc-bar i { width: 0; }
 .sc-reveal.in .sc-bar i { width: var(--w); }
 
+/* ---- signs we skip ---- */
+.signs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 3rem; }
+@media (max-width: 860px) { .signs { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .signs { grid-template-columns: 1fr; } }
+.sign { border: 1px solid var(--line); padding: 1.5rem 1.4rem; transition: transform .35s ease; }
+.sign:hover { transform: translateY(-4px); }
+.sign .quote { color: var(--faint); text-decoration: line-through; font-size: .98rem; margin-bottom: .8rem; }
+.sign h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.2; margin-bottom: .5rem; }
+.sign p { color: var(--mut); font-size: .93rem; line-height: 1.45; }
+
 /* ---- why us (them vs us) ---- */
 .versus { margin-top: 3rem; }
 .vs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
