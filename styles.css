@@ -158,7 +158,7 @@ input[type=range]::-moz-range-track { height: 2px; background: var(--inv-line); 
 /* ---- genetics / family risk map ---- */
 .cover { display: flex; flex-wrap: wrap; gap: .5rem .7rem; margin-top: .6rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); }
 .cover b { color: var(--ink); font-weight: 600; }
-.riskmap { padding: 1.7rem 1.7rem 1.6rem; border: 1px solid var(--line); }
+.riskmap { padding: 1.7rem 1.7rem 1.6rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
 .rm-head { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); margin-bottom: 1.4rem; }
 .lineage { display: flex; align-items: flex-start; gap: .5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
 .lineage .node { display: flex; flex-direction: column; align-items: center; }
@@ -272,7 +272,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .docs .founder p { font-size: .96rem; }
 
 /* ---- family care card ---- */
-.famcard { padding: 1.7rem 1.7rem 1.6rem; border: 1px solid var(--line); }
+.famcard { padding: 1.7rem 1.7rem 1.6rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
 .fam-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 0; border-top: 1px solid var(--line); }
 .fam-row:first-of-type { border-top: none; padding-top: .3rem; }
 .fam-who b { display: block; font-size: 1.05rem; font-weight: 700; }
@@ -374,7 +374,7 @@ nav.scrolled { box-shadow: 0 1px 0 var(--line), 0 8px 24px -14px rgba(0,0,0,.28)
 .step .k { display: block; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-bottom: .9rem; }
 .step h3 { font-size: clamp(1.6rem, 3.4vw, 2.6rem); font-weight: 700; }
 .step p { color: var(--mut); font-size: 1.1rem; line-height: 1.55; margin-top: 1rem; max-width: 42ch; }
-.rmap-card { border: 1px solid var(--line); padding: 1.7rem; background: var(--bg); }
+.rmap-card { border: 1px solid var(--line); padding: 1.7rem; background: var(--bg); color: var(--ink); }
 .scrolly-ch.scrolly [data-appear] { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
 .scrolly-ch.scrolly [data-appear].on { opacity: 1; transform: none; }
 @media (min-width: 901px) {
