@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prevayu · A personal health guide for every Indian family</title>
-<meta name="description" content="Prevayu is a personal health guide for every Indian family. We map the illnesses that run in your family, track your health with a living score, and help you prevent them years early. One guide who stays, prevention over cure.">
-<meta name="keywords" content="preventive health, family health, health guide India, health score, prevention, aging parents, women's health, menopause care">
+<title>Prevayu · Find it before it finds your family</title>
+<meta name="description" content="Prevayu finds the person in your family most likely to get diabetes, high blood pressure or heart disease, years before a diagnosis, and keeps them in care with a doctor-led team.">
+<meta name="keywords" content="diabetes risk, high blood pressure, heart disease prevention, family history, Indian Diabetes Risk Score, preventive care India, Visakhapatnam">
 <meta name="author" content="Prevayu">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://prevayu.vercel.app/">
@@ -14,18 +14,16 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prevayu">
-<meta property="og:title" content="Prevayu · A personal health guide for every Indian family">
-<meta property="og:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
+<meta property="og:title" content="Prevayu · Find it before it finds your family">
+<meta property="og:description" content="We find the person in your family most likely to get diabetes, high blood pressure or heart disease, years before a diagnosis, and keep them in care with a doctor-led team.">
 <meta property="og:url" content="https://prevayu.vercel.app/">
 <meta property="og:image" content="https://prevayu.vercel.app/og-image.png">
-<meta property="og:image:secure_url" content="https://prevayu.vercel.app/og-image.png">
-<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Prevayu. A personal health guide for every Indian family.">
+<meta property="og:image:alt" content="Prevayu. Find it before it finds your family.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Prevayu · A personal health guide for every Indian family">
-<meta name="twitter:description" content="We map the illnesses that run in your family, track your health with a living score, and help you get ahead of them years early. One guide who stays, prevention over cure.">
+<meta name="twitter:title" content="Prevayu · Find it before it finds your family">
+<meta name="twitter:description" content="We find the person in your family most likely to get diabetes, high blood pressure or heart disease, years before a diagnosis, and keep them in care with a doctor-led team.">
 <meta name="twitter:image" content="https://prevayu.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,269 +37,199 @@
   <div class="wrap nav-in">
     <a class="brand" href="/">Prevayu<sup>IN</sup></a>
     <div class="nav-links">
+      <a href="/#check">Risk check</a>
       <a href="/how-it-works">How it works</a>
-      <a href="/family-risk">Family risk</a>
       <a href="/body">The body</a>
       <a href="/about">About</a>
     </div>
-    <a class="btn" href="/get-started">Get started</a>
+    <a class="btn" href="/get-started">Join the pilot</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:1.6rem"><span>Preventive health</span><b>Making India health conscious</b></div>
+    <div class="eyebrow" style="margin-bottom:1.6rem"><span>Preventive care</span><b>Diabetes · Blood pressure · Heart</b></div>
     <h1 class="title">
-      <span class="l"><span>A personal</span></span>
-      <span class="l"><span>health guide for</span></span>
-      <span class="l"><span><em>every</em> Indian family.</span></span>
+      <span class="l"><span>Find it before</span></span>
+      <span class="l"><span>it finds your</span></span>
+      <span class="l"><span><em>family.</em></span></span>
     </h1>
     <div class="hero-foot">
-      <p>Prevayu maps the illnesses that run in your family, tracks your health as it changes, and helps you get ahead of what you are most likely to face. One guide who stays with you, explains it all in plain language, and keeps your whole family well for longer.</p>
+      <p>Prevayu finds the person in your family most likely to get diabetes, high blood pressure or heart disease, years before a diagnosis. Then a doctor-led team stays with them, week after week, so the plan actually gets followed.</p>
       <div class="hero-cta">
-        <a class="btn lg" href="/get-started">Start with your family</a>
-        <a class="btn ghost lg" href="/how-it-works">How it works</a>
+        <a class="btn lg" href="#check">Check your risk, free</a>
+        <a class="btn ghost lg" href="/get-started">Join the pilot</a>
       </div>
     </div>
-    <div class="proof reveal"><span class="pdot"></span>25 families signed up before we launched</div>
   </div>
 </header>
 
-<!-- Chapter 0: the worry (story opens here) -->
-<section class="worry">
+<!-- The problem -->
+<section id="problem" class="inv">
   <div class="wrap">
-    <div class="eyebrow reveal"><span>Meet the Reddys</span></div>
-    <h2 class="big-head reveal" style="margin-top:1rem;max-width:20ch">Diabetes and heart disease run in their family.</h2>
-    <p class="lede reveal" style="margin-top:1.4rem;max-width:52ch">Amma's mother had both. Her father's heart gave out early. They have always known it hangs over them, and never known what to actually do about it. Most families don't. Here is what Prevayu does.</p>
-  </div>
-</section>
-
-<!-- Score live: the hook (second beat) -->
-<section id="score-live" class="inv">
-  <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:2rem"><span>Where it takes them</span><b>Drag to watch a year of prevention</b></div>
-    <div class="score-top">
-      <div class="score-readout">
-        <span class="score-num" id="scoreNum">68</span>
-        <div class="score-meta">
-          <b id="scoreMonth">January</b>
-          <span id="scoreDelta">baseline</span><br>
-          The Reddy family
-        </div>
+    <div class="eyebrow"><span>The problem</span></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:18ch">India finds these diseases late, then loses the people it finds.</h2>
+    <div class="stats">
+      <div class="stat reveal">
+        <b>20%</b>
+        <p>of Indians aged 45 and over have high blood pressure and don't know it.</p>
+        <span class="cite">LASI Wave 1, IIPS / MoHFW, 2020</span>
       </div>
-      <p class="lede" style="max-width:34ch">This is their health score. Drag through the year and watch it climb as they get ahead of what they inherited. That rising line is the whole point. Here is how we get there.</p>
-    </div>
-    <div class="chart-box">
-      <svg id="chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
-        <g class="grid" id="grid"></g>
-        <polyline id="scoreLine" points=""></polyline>
-        <circle id="scoreDot" cx="0" cy="0" r="7"></circle>
-      </svg>
-      <div class="month-marks">
-        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Now</span>
+      <div class="stat reveal">
+        <b>~40%</b>
+        <p>of people 45 and over with diabetes are undiagnosed.</p>
+        <span class="cite">Lancet Global Health, 2023</span>
       </div>
-    </div>
-    <div class="scrub-row">
-      <span class="hint">Jan</span>
-      <input type="range" id="scrub" min="0" max="11" step="1" value="0" aria-label="Scrub through the year to see the health score change">
-      <span class="hint">Now</span>
+      <div class="stat reveal">
+        <b>51%</b>
+        <p>of patients came back to India's hypertension programme. Among them, control rose from 26% to 60%.</p>
+        <span class="cite">J Clin Hypertens, 2021</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Chapter 1: what runs in your family (pinned) -->
-<section class="chapter scrolly-ch" id="genetics">
+<!-- The check -->
+<section id="check">
   <div class="wrap">
-    <div class="ch-head">
-      <div class="eyebrow"><span>Chapter one · What runs in your family</span></div>
-      <h2 class="big-head" style="margin-top:1rem">We read what<br>you inherited.</h2>
-    </div>
-    <div class="ch-grid">
-      <div class="stage">
-        <div class="rmap-card">
-          <div class="rm-head">Family risk map · The Reddy family</div>
-          <div class="lineage" data-appear="0">
-            <div class="node carry"><div class="dot"></div><span>Grandfather</span></div>
-            <div class="link"></div>
-            <div class="node carry"><div class="dot"></div><span>Mother</span></div>
-            <div class="link"></div>
-            <div class="node"><div class="dot"></div><span>You</span></div>
+    <div class="eyebrow"><span>Free risk check</span><b>Four questions · under a minute</b></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:20ch">Start with one person. You, or a parent.</h2>
+    <p class="lede" style="margin-top:1.2rem;max-width:58ch">This is the Indian Diabetes Risk Score, a screening tool built on Indian data and used by doctors across the country. It runs on this page. Nothing you enter is sent anywhere.</p>
+
+    <div class="check">
+      <form class="check-q" id="idrsForm" onsubmit="return false">
+        <fieldset>
+          <legend><span class="qn">01</span>Age</legend>
+          <div class="opts">
+            <label><input type="radio" name="age" value="0"><span>Under 35</span></label>
+            <label><input type="radio" name="age" value="20"><span>35 to 49</span></label>
+            <label><input type="radio" name="age" value="30"><span>50 or over</span></label>
           </div>
-          <div class="rm-row" data-appear="2"><div class="cond">Type 2 diabetes</div><div class="src">Grandfather, mother</div><div class="lvl high">Elevated</div></div>
-          <div class="rm-row" data-appear="2"><div class="cond">Heart disease</div><div class="src">Father</div><div class="lvl mod">Moderate</div></div>
-          <div class="rm-row" data-appear="3"><div class="cond">Bone loss</div><div class="src">Mother</div><div class="lvl mod">Watching</div></div>
-          <div class="rm-row" data-appear="3"><div class="cond">Breast cancer</div><div class="src">Aunt</div><div class="lvl low">Screening early</div></div>
-          <div class="rm-foot" data-appear="4">We plan around these ten or more years early, while they are still easy to change.</div>
-        </div>
-      </div>
-      <div class="steps">
-        <div class="step" data-step="0"><span class="k">Step one</span><h3>Start with your family</h3><p>Who had what, and at what age. We build your family tree, three generations of it, because your history is the closest thing there is to a preview of your own.</p></div>
-        <div class="step" data-step="1"><span class="k">Step two</span><h3>Weigh what you inherited</h3><p>Parents count most, then grandparents and aunts. Two affected relatives, or an early onset, moves the odds. Diabetes, heart disease, and many cancers travel down generations this way.</p></div>
-        <div class="step" data-step="2"><span class="k">Step three</span><h3>Add your own numbers</h3><p>Your existing lab reports and vitals, sugar, blood pressure, lipids, bone density, show whether you are already trending toward what you inherited, or holding it off.</p></div>
-        <div class="step" data-step="3"><span class="k">Step four</span><h3>Ground it in medicine</h3><p>We map the risk using established clinical tools, not guesswork, and a licensed doctor reviews and signs off on every family. It is a risk map and a plan, never a diagnosis.</p></div>
-        <div class="step" data-step="4"><span class="k">The result</span><h3>Your family risk map</h3><p>Every condition you are prone to, its level, where it comes from, and how many years of runway you have to get ahead of it. This is where prevention actually begins.</p></div>
-      </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="qn">02</span>Waist, measured at the belly button</legend>
+          <div class="opts seg" role="radiogroup" aria-label="Sex, for waist ranges">
+            <label><input type="radio" name="sex" value="f" checked><span>Woman</span></label>
+            <label><input type="radio" name="sex" value="m"><span>Man</span></label>
+          </div>
+          <div class="opts">
+            <label><input type="radio" name="waist" value="0"><span data-f="Under 80 cm" data-m="Under 90 cm">Under 80 cm</span></label>
+            <label><input type="radio" name="waist" value="10"><span data-f="80 to 89 cm" data-m="90 to 99 cm">80 to 89 cm</span></label>
+            <label><input type="radio" name="waist" value="20"><span data-f="90 cm or more" data-m="100 cm or more">90 cm or more</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="qn">03</span>How active are they, most weeks?</legend>
+          <div class="opts">
+            <label><input type="radio" name="act" value="0"><span>Regular vigorous exercise, or hard physical work</span></label>
+            <label><input type="radio" name="act" value="10"><span>Regular moderate exercise, or moderately active work</span></label>
+            <label><input type="radio" name="act" value="20"><span>Regular mild exercise, or lightly active work</span></label>
+            <label><input type="radio" name="act" value="30"><span>No exercise, mostly sitting</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="qn">04</span>Do their parents have diabetes?</legend>
+          <div class="opts">
+            <label><input type="radio" name="fam" value="0"><span>Neither parent</span></label>
+            <label><input type="radio" name="fam" value="10"><span>One parent</span></label>
+            <label><input type="radio" name="fam" value="20"><span>Both parents</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <aside class="check-r" id="idrsResult" aria-live="polite">
+        <div class="eyebrow"><span>Result</span></div>
+        <div class="check-num"><b id="idrsScore">0</b><i>/ 100</i></div>
+        <div class="check-band" id="idrsBand">Answer all four</div>
+        <div class="check-bar"><i id="idrsBar"></i><span style="left:30%"></span><span style="left:60%"></span></div>
+        <div class="check-scale"><span>Low</span><span>Moderate</span><span>High</span></div>
+        <p class="check-msg" id="idrsMsg">Pick one answer for each question. The score adds up as you go.</p>
+        <a class="btn" id="idrsCta" href="/get-started" hidden>Join the pilot</a>
+        <button class="btn ghost" id="idrsReset" type="button" hidden>Check someone else</button>
+        <p class="check-note">A screening score, not a diagnosis. Only a blood test can tell. Mohan et al., JAPI 2005.</p>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- Signs we skip -->
-<section id="signs">
-  <div class="wrap">
-    <div class="eyebrow"><span>The signs we skip</span></div>
-    <h2 class="big-head" style="margin-top:1rem">Your body is already<br>warning you.</h2>
-    <p class="lede" style="margin-top:1.2rem">Family history is one signal. Your body gives others every day, and we are taught to wait and hope they pass. Prevayu helps you tell the difference, so you never ignore the one that matters.</p>
-    <div class="signs">
-      <div class="sign reveal"><div class="quote">"It's just gas."</div><h3>Chest tightness on effort or after meals</h3><p>Often blamed on the stomach. It can be the heart.</p></div>
-      <div class="sign reveal"><div class="quote">"It's just age."</div><h3>Always tired, breathless on the stairs</h3><p>Brushed off as getting older. Can point to the heart, thyroid, or anaemia.</p></div>
-      <div class="sign reveal"><div class="quote">"It's just stress."</div><h3>Constant thirst, waking to urinate at night</h3><p>A classic early sign of rising blood sugar.</p></div>
-      <div class="sign reveal"><div class="quote">"It'll heal on its own."</div><h3>Cuts and wounds that heal slowly</h3><p>One of the body's first signals of diabetes.</p></div>
-      <div class="sign reveal"><div class="quote">"It's normal for women."</div><h3>Periods that changed, heavy bleeding, hot flashes</h3><p>Real hormonal shifts that deserve answers, not a shrug.</p></div>
-      <div class="sign reveal"><div class="quote">"Just body pain."</div><h3>Aches, back pain, a small fall that broke a bone</h3><p>Bones can thin silently, catchable long before a major fracture.</p></div>
-    </div>
-    <p class="form-note" style="margin-top:1.6rem">These are not diagnoses. The point is to notice, and to ask. When in doubt, your guide helps you decide whether it is nothing or worth a check.</p>
-  </div>
-</section>
-<!-- Act -->
-<section id="act">
-  <div class="wrap">
-    <div class="eyebrow"><span>Chapter two · Turn risk into a plan</span></div>
-    <h2 class="big-head" style="margin-top:1rem">It's what we do next<br>that changes anything.</h2>
-    <p class="lede" style="margin-top:1.2rem">Being told you're at risk is not the point, on its own it just creates fear. The whole product is what happens after.</p>
-    <div class="rows">
-      <div class="row reveal"><div class="rn">01</div><h3>A prevention plan built for your risks</h3><p>Only the screenings that matter for you, on a schedule, plus the food, habit, and lifestyle changes that actually move your specific risks. Supplements only where they genuinely help.</p></div>
-      <div class="row reveal"><div class="rn">02</div><h3>Catch it early, when it's still easy</h3><p>For the risks we cannot prevent, targeted screening catches them at the earliest stage, when they are simple to treat instead of life-changing. Stage zero, not stage three.</p></div>
-      <div class="row reveal"><div class="rn">03</div><h3>Habits that actually stick</h3><p>The hard part of prevention is doing it, week after week. Your guide keeps the whole family on track with plain nudges and check-ins, so the plan does not die in a drawer.</p></div>
-      <div class="row reveal"><div class="rn">04</div><h3>Proof it's working</h3><p>Your health score rises and your risks step down over time, from elevated to moderate to watched. You see prevention working, not just hear that it should.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Chapter 3: the health score (pinned) -->
-<section class="chapter scrolly-ch" id="score-ch">
-  <div class="wrap">
-    <div class="ch-head">
-      <div class="eyebrow"><span>Chapter three · The health score</span></div>
-      <h2 class="big-head" style="margin-top:1rem">One number your<br>whole family reads.</h2>
-    </div>
-    <div class="ch-grid">
-      <div class="stage">
-        <div class="rmap-card scorecard-stage">
-          <div class="rm-head">Health score · The Reddy family</div>
-          <div class="sc-num" data-appear="4"><b>82</b><span>/ 100 · improving</span></div>
-          <div class="sc-input" data-appear="0"><span class="sc-label">Family risk</span><span class="sc-bar"><i style="--w:64%"></i></span></div>
-          <div class="sc-input" data-appear="1"><span class="sc-label">Your vitals</span><span class="sc-bar"><i style="--w:78%"></i></span></div>
-          <div class="sc-input" data-appear="2"><span class="sc-label">Daily habits</span><span class="sc-bar"><i style="--w:71%"></i></span></div>
-          <div class="sc-input" data-appear="3"><span class="sc-label">Your trend</span><span class="sc-bar"><i style="--w:88%"></i></span></div>
-        </div>
-      </div>
-      <div class="steps">
-        <div class="step" data-step="0"><span class="k">Input one</span><h3>What you inherited</h3><p>Your family risk sets the baseline, the conditions being watched. It is the part you cannot change, so we build everything else around it.</p></div>
-        <div class="step" data-step="1"><span class="k">Input two</span><h3>Your vitals</h3><p>The few markers that actually matter for your risks, sugar, blood pressure, bone, and how close they sit to a healthy range for you.</p></div>
-        <div class="step" data-step="2"><span class="k">Input three</span><h3>Your daily habits</h3><p>Food, movement, and sleep, and how well you keep to the plan. The part you control, and the part that moves the score the most.</p></div>
-        <div class="step" data-step="3"><span class="k">Input four</span><h3>Your trend</h3><p>Are you getting better, month over month? Direction matters as much as the number, and it rewards you for doing the work.</p></div>
-        <div class="step" data-step="4"><span class="k">Together</span><h3>A score that rises as you improve</h3><p>Doctor-reviewed, personal to your risks, and never a diagnosis. Just a clear, honest way to see where your family stands and whether prevention is working.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Outcome -->
-<section id="outcome">
-  <div class="wrap">
-    <div class="eyebrow"><span>Chapter four · Over the years</span></div>
-    <h2 class="big-head" style="margin-top:1rem">The disease that runs in your family can stop with you.</h2>
-    <p class="lede" style="margin-top:1.2rem">Prevention is not about worry, it's about bending the line. We help you prevent it, delay it by years, or catch it so early it's easily beaten, and add healthy years your family would otherwise lose.</p>
-    <div class="chart-box" style="margin-top:2.5rem">
-      <svg id="traj" viewBox="0 0 1000 380" preserveAspectRatio="none" aria-hidden="true">
-        <g id="trajGrid"></g>
-        <polyline id="trajWithout" points=""></polyline>
-        <polyline id="trajWith" points=""></polyline>
-        <circle id="trajDot" cx="0" cy="0" r="7"></circle>
-      </svg>
-      <div class="traj-x"><span>Today</span><span>5 years</span><span>10 years</span><span>15 years</span><span>20 years</span></div>
-      <div class="traj-legend">
-        <span class="lg with"><i></i> With Prevayu, health held and risks bent down</span>
-        <span class="lg without"><i></i> Without, the illness arrives on schedule</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Lifelong asset -->
-<section id="asset">
-  <div class="wrap">
-    <div class="eyebrow"><span>A record that compounds</span></div>
-    <h2 class="big-head" style="margin-top:1rem">Your family's health,<br>built over years.</h2>
-    <p class="lede" style="margin-top:1.2rem">The score is not a one-off number. It is an asset your family builds, one win at a time, and one you can hand to your children so they start ahead, not from zero.</p>
-    <div class="rows">
-      <div class="row reveal"><div class="rn">YR 1</div><h3>Vitamin D restored, bone loss slowed</h3><p>Amma's first wins. Small, specific, and tracked, so you can see the plan working from the very start.</p></div>
-      <div class="row reveal"><div class="rn">YR 2</div><h3>Diabetes risk, elevated to moderate</h3><p>Blood sugar back in range after a year on the roadmap. A risk that runs in the family, bent down.</p></div>
-      <div class="row reveal"><div class="rn">YR 3</div><h3>Cardiac risk, moderate to watched</h3><p>Nanna's blood pressure controlled. The things most likely to reach him, caught and managed early.</p></div>
-      <div class="row reveal"><div class="rn">NEXT</div><h3>Passed to the next generation</h3><p>Your children inherit your family's health map and years of head start, instead of finding out too late like every generation before them.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Guide -->
-<section id="guide">
-  <div class="wrap split">
-    <div class="stack-sm">
-      <div class="eyebrow"><span>The core of Prevayu</span></div>
-      <h2 class="big-head">One guide.<br>Who stays.</h2>
-      <p class="lede">Not a different doctor every visit. One personal health guide, an AI backed by real MBBS doctors, that knows your family's history, explains every result in plain language, and tracks it over years. It never scares you, and it never sells you what you do not need.</p>
-    </div>
-    <div class="chat reveal">
-      <div class="bub"><div class="w">Priya · daughter</div>Amma's report shows Vitamin D at 28. Should we be worried?</div>
-      <div class="bub you"><div class="w">Your guide</div>A little low, very common at her age and easy to fix. No medicine needed. Morning sun and a weekly supplement, then we recheck in 8 weeks.</div>
-      <div class="bub"><div class="w">Priya · daughter</div>That's a relief. And her bone density?</div>
-      <div class="bub you"><div class="w">Your guide</div>Slightly below normal, so we watch it, not panic. It's on her score card and I'll message you before the next check is due.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Care for parents -->
-<section id="parents">
-  <div class="wrap split">
-    <div class="stack-sm">
-      <div class="eyebrow"><span>Chapter five · Your whole family</span></div>
-      <h2 class="big-head">Care for your parents,<br>from anywhere.</h2>
-      <p class="lede">You're in another city. They say they're fine. Prevayu keeps watch on the people you love, looks after their health day to day, and messages you the moment something needs you. One family, one guide, wherever you all are.</p>
-    </div>
-    <div class="card famcard reveal">
-      <div class="rm-head">Family · The Reddy family</div>
-      <div class="fam-row"><div class="fam-who"><b>Amma</b><span>Mother · 58</span></div><div class="fam-status"><span class="fscore">74</span><span class="pill watch">Bone check due</span></div></div>
-      <div class="fam-row"><div class="fam-who"><b>Nanna</b><span>Father · 63</span></div><div class="fam-status"><span class="fscore">81</span><span class="pill ok">On track</span></div></div>
-      <div class="fam-row"><div class="fam-who"><b>You</b><span>Bengaluru · 600 km away</span></div><div class="fam-status"><span class="fscore">88</span><span class="pill ok">All clear</span></div></div>
-      <div class="rm-foot">We keep watch on all of them, and message you the moment something needs your attention.</div>
-    </div>
-  </div>
-</section>
-
-<!-- How -->
+<!-- Find, confirm, keep -->
 <section id="how">
   <div class="wrap">
-    <h2 class="big-head">Four steps.<br>No pressure. No test-first.</h2>
-    <div class="rows">
-      <div class="row reveal"><div class="rn">01</div><h3>Map what runs in your family</h3><p>We start with your family history, the illnesses that travel down generations, then your habits and existing reports. That tells us the risks that actually matter for you.</p></div>
-      <div class="row reveal"><div class="rn">02</div><h3>Explain, don't scare</h3><p>Plain language on what is reversible, what needs attention, and what is genuinely nothing to worry about.</p></div>
-      <div class="row reveal"><div class="rn">03</div><h3>A real roadmap</h3><p>Practical food and habit changes that fit your life. What to change, what to ignore, what not to miss.</p></div>
-      <div class="row reveal"><div class="rn">04</div><h3>A monthly check-in</h3><p>You return to track progress and stay accountable, because you are well, not because you are sick.</p></div>
+    <div class="eyebrow"><span>What Prevayu does</span></div>
+    <h2 class="big-head" style="margin-top:1rem">Find. Confirm. Keep.</h2>
+    <div class="grid3">
+      <div class="gstep reveal"><div class="n">01 · FREE</div><h3>Find who is at risk</h3><p>A three-generation family map, the risk check above for each adult, and a blood pressure and waist reading. It shows who in the family needs attention first.</p></div>
+      <div class="gstep reveal"><div class="n">02 · AT LAB COST</div><h3>Confirm with the right tests</h3><p>Only the tests guidelines call for, for the person who needs them. Collected at home by NABL-accredited labs, and billed at what the lab charges.</p></div>
+      <div class="gstep reveal"><div class="n">03 · CARE PLAN</div><h3>Keep them in care</h3><p>A named doctor sets the plan. A trained guide checks in every week. The family sees progress, and nobody has to remember alone.</p></div>
     </div>
-    <a class="btn ghost" href="/how-it-works" style="margin-top:2.5rem">Read how it works in full</a>
   </div>
 </section>
 
-<!-- Trust -->
+<!-- Tests -->
+<section id="tests">
+  <div class="wrap">
+    <div class="eyebrow"><span>The tests</span><b>Guidelines first, not packages</b></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:18ch">A few tests with a reason. No 90-test packages.</h2>
+    <div class="tests">
+      <div class="tcol reveal">
+        <h3>What we check first</h3>
+        <ul>
+          <li><b>Fasting glucose and HbA1c</b><span>Sugar now, and over the last three months. HbA1c 5.7 to 6.4% is prediabetes (ADA 2026).</span></li>
+          <li><b>Lipid profile</b><span>Cholesterol and triglycerides, the usual starting point.</span></li>
+          <li><b>ApoB</b><span>Counts the particles that clog arteries. It adds most when triglycerides are high, which is common in Indians.</span></li>
+          <li><b>Lp(a), once in a lifetime</b><span>An inherited heart risk. The 2026 US lipid guideline says to test it once in every adult.</span></li>
+        </ul>
+      </div>
+      <div class="tcol reveal">
+        <h3>Only when there's a reason</h3>
+        <ul>
+          <li><b>Liver (FIB-4)</b><span>For people with diabetes or a large waist, to check for fatty liver.</span></li>
+          <li><b>Kidney (eGFR and urine albumin)</b><span>For people with high blood pressure or diabetes.</span></li>
+          <li><b>hs-CRP</b><span>Sometimes, to fine-tune heart risk. Not a screening test.</span></li>
+        </ul>
+        <h3 style="margin-top:2rem">Not by default</h3>
+        <p class="tnote">Vitamin D, B12 and thyroid tests in healthy adults. Guidelines advise against routine screening, so we only order them when there's a symptom or a reason.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Care team -->
+<section id="team-care" class="inv">
+  <div class="wrap">
+    <div class="eyebrow"><span>Who looks after you</span></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:18ch">One doctor, one guide, and a little help from AI.</h2>
+    <div class="layers">
+      <div class="layer reveal"><span class="role">Doctor · registered in India</span><h3>Sets and signs every plan</h3><p>Reviews each result and makes every medical decision. You always know their name and registration number.</p></div>
+      <div class="layer reveal"><span class="role">Guide · trained by our doctors</span><h3>The weekly check-in</h3><p>Takes your readings, books tests, reminds, and passes on the doctor's explanation. Guides don't give medical advice of their own.</p></div>
+      <div class="layer reveal"><span class="role">AI · helps the team</span><h3>Keeps everyone up to date</h3><p>Summarises readings for the doctor and answers general health questions. It never gives you personal medical advice. That is always a doctor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why keeping -->
+<section id="evidence">
+  <div class="wrap">
+    <div class="eyebrow"><span>Why the weekly part matters</span></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:20ch">A report alone changes nothing. Staying with people does.</h2>
+    <div class="stats light">
+      <div class="stat reveal"><b>28.5%</b><p>fewer Indians with prediabetes developed diabetes when they had lifestyle support.</p><span class="cite">Indian Diabetes Prevention Programme, 2006</span></div>
+      <div class="stat reveal"><b>36%</b><p>lower diabetes risk in at-risk Indian men who got regular text reminders.</p><span class="cite">Lancet Diabetes &amp; Endocrinology, 2013</span></div>
+      <div class="stat reveal"><b>6 vs 1</b><p>mmHg drop in blood pressure with home monitoring plus steady support, against monitoring alone.</p><span class="cite">PLoS Medicine, 2017</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Promises -->
 <section id="trust" class="inv">
   <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:1.6rem"><span>Non-negotiable</span></div>
-    <h2 class="big-head">We are on your<br>family's side.</h2>
+    <div class="eyebrow" style="margin-bottom:1.6rem"><span>Our promises</span></div>
+    <h2 class="big-head">We earn by keeping<br>your family well.</h2>
     <div class="trust-list">
-      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No forced tests</h3><p>Only what has a clear reason, explained before you agree to anything.</p></div></div>
-      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No commission-driven prescriptions</h3><p>We earn by guiding you well, never by selling you more than you need.</p></div></div>
-      <div class="trust-item reveal"><div class="x">✕</div><div><h3>Pay only after your consultation</h3><p>Understand the value first. Then decide. No trap, no fear.</p></div></div>
-      <div class="trust-item reveal"><div class="x">✕</div><div><h3>One guide, one relationship</h3><p>Transparent pricing and a person who knows your whole family.</p></div></div>
+      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No commissions</h3><p>No cut on tests, medicines or referrals. Our doctors are paid a flat fee, never per test.</p></div></div>
+      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No test packages</h3><p>Only what has a clear reason, explained before you agree, billed at the lab's price.</p></div></div>
+      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No faceless care</h3><p>A named doctor and a named guide who know your family, not a different person every call.</p></div></div>
+      <div class="trust-item reveal"><div class="x">✕</div><div><h3>No selling your data</h3><p>Your family's health records are yours. Used only for your care, and never sold.</p></div></div>
     </div>
   </div>
 </section>
@@ -309,37 +237,32 @@
 <!-- Pricing -->
 <section id="pricing">
   <div class="wrap">
-    <h2 class="big-head">Priced so a whole<br>family can start.</h2>
+    <h2 class="big-head">Free to find.<br>Paid to keep.</h2>
     <div style="margin-top:3rem">
-      <div class="price-row reveal"><div><div class="pn">Walk-in consult</div></div><div class="pd">Understand where you stand. No test-first.</div><div class="pa">₹199-299</div></div>
-      <div class="price-row reveal"><div><div class="pn">Family plan · quarterly</div></div><div class="pd">One guide, family score card, roadmap and tracking. Up to 4 members.</div><div class="pa">₹1,499-1,999</div></div>
-      <div class="price-row reveal"><div><div class="pn">Monthly tracking</div></div><div class="pd">Continuous score, habit guidance, check-in reminders. Per person.</div><div class="pa">₹499-699</div></div>
-      <div class="price-row reveal"><div><div class="pn">Corporate & institutions</div></div><div class="pd">Preventive coverage for teams and schools. Per person, per month.</div><div class="pa">₹200-300</div></div>
+      <div class="price-row reveal"><div><div class="pn">Family risk check</div></div><div class="pd">Family map, risk check for each adult, and what to do next.</div><div class="pa">Free</div></div>
+      <div class="price-row reveal"><div><div class="pn">Confirmation tests</div></div><div class="pd">Collected at home by a NABL-accredited lab. You pay what the lab charges, shown on the bill.</div><div class="pa">At cost</div></div>
+      <div class="price-row reveal"><div><div class="pn">Care plan</div></div><div class="pd">Your doctor, your weekly guide, and progress the family can see. Per person enrolled.</div><div class="pa">₹1,499/mo</div></div>
+      <div class="price-row reveal"><div><div class="pn">Employers</div></div><div class="pd">For your team, and their parents.</div><div class="pa">Talk to us</div></div>
     </div>
   </div>
 </section>
 
-<!-- Why us -->
-<section id="why-us">
+<!-- People -->
+<section id="people">
   <div class="wrap">
-    <div class="eyebrow"><span>Why Prevayu</span></div>
-    <h2 class="big-head" style="margin-top:1rem">The usual way,<br>and ours.</h2>
-    <div class="versus">
-      <div class="vs-row">
-        <div class="vs-them"><span class="k">The usual</span>One-off tests with numbers and no meaning.</div>
-        <div class="vs-us"><span class="k">Prevayu</span>One guide who explains it plainly and stays with you.</div>
+    <div class="eyebrow"><span>Who is building Prevayu</span></div>
+    <div class="people">
+      <div class="pgroup">
+        <div class="pg-label">Supervising doctors</div>
+        <div class="prow"><b>Dr. Allena Prem Kumar</b><span>Pulmonary medicine</span><span>MBBS, MD · 35+ years · Visakhapatnam</span></div>
+        <div class="prow"><b>Dr. Ramachandrudu</b><span>Orthopaedics</span><span></span></div>
+        <div class="prow"><b>Dr. Vijaya</b><span>Oncology</span><span></span></div>
+        <div class="prow"><b>Specialist advisors</b><span>Practising abroad</span><span>Review our clinical protocol</span></div>
       </div>
-      <div class="vs-row">
-        <div class="vs-them"><span class="k">The usual</span>Treats you once you are already sick.</div>
-        <div class="vs-us"><span class="k">Prevayu</span>Gets ahead of what runs in your family, years early.</div>
-      </div>
-      <div class="vs-row">
-        <div class="vs-them"><span class="k">The usual</span>The individual, on a single visit.</div>
-        <div class="vs-us"><span class="k">Prevayu</span>The whole family, tracked over years.</div>
-      </div>
-      <div class="vs-row">
-        <div class="vs-them"><span class="k">The usual</span>Earns by selling you more tests and medicines.</div>
-        <div class="vs-us"><span class="k">Prevayu</span>Earns by keeping your family well.</div>
+      <div class="pgroup">
+        <div class="pg-label">Founders</div>
+        <div class="prow"><b>Asrith Cheepurupalli</b><span>Co-founder</span><span>Product and engineering</span></div>
+        <div class="prow"><b>Jeevana Karanam</b><span>Co-founder</span><span>Clinical direction; medical student</span></div>
       </div>
     </div>
   </div>
@@ -351,44 +274,24 @@
     <div class="eyebrow"><span>Questions</span></div>
     <h2 class="big-head" style="margin-top:1rem">Good to know.</h2>
     <div class="faq">
-      <details><summary>Is this a diagnosis?</summary><p>No. Prevayu is preventive guidance, reviewed by licensed doctors, not a diagnosis. Anything that needs a physician, we route you to one.</p></details>
-      <details><summary>Do I have to change my doctor?</summary><p>No. We work alongside your existing doctors and our licensed panel. Prevayu is your first stop for understanding your health and getting ahead of it.</p></details>
-      <details><summary>Is my family's data private?</summary><p>Yes. Your health data is yours. It is kept secure, used only to guide your family's care, and never sold.</p></details>
-      <details><summary>Do you push tests or medicines?</summary><p>Never. No forced tests, no commission-driven prescriptions. Only what has a clear reason, explained before you agree.</p></details>
-      <details><summary>What does it cost?</summary><p>Plans are priced for Indian families, from &#8377;499 a month, with a quarterly family plan covering up to four members. You pay only after your consultation.</p></details>
-      <details><summary>Where is Prevayu available?</summary><p>We are starting in Visakhapatnam, with the guide available to families anywhere. Tell us where you are and we will reach out.</p></details>
+      <details><summary>Is the risk check a diagnosis?</summary><p>No. It's a screening score that tells you who should get a blood test. Only a test, read by a doctor, can tell you if someone has diabetes.</p></details>
+      <details><summary>Does the AI give medical advice?</summary><p>No. India's telemedicine rules say only a registered doctor can advise you personally, and that is how we work. The AI helps your doctor and guide keep up, and answers general health questions.</p></details>
+      <details><summary>Who is the guide?</summary><p>A person trained by our doctors to check in with you every week, take readings and book tests. Guides pass on your doctor's advice; they don't give their own.</p></details>
+      <details><summary>Why not a full body checkup?</summary><p>Big packages test many things healthy people don't need, which leads to more worry and more tests. We start with the few tests guidelines recommend, for the person who needs them.</p></details>
+      <details><summary>Do I have to change my doctor?</summary><p>No. We work alongside your family doctor and send them a one-page summary whenever you want.</p></details>
+      <details><summary>Where is Prevayu available?</summary><p>Our first pilot is in Visakhapatnam and Bengaluru, for families with parents in Andhra Pradesh. Join the pilot and we'll reach out.</p></details>
     </div>
-  </div>
-</section>
-<!-- Founders -->
-<section id="founders">
-  <div class="wrap">
-    <div class="eyebrow"><span>Who is building this</span></div>
-    <div class="founders">
-      <div class="founder reveal">
-        <div class="role">Co-founder · Medicine</div>
-        <h3>Jeevana Karanam</h3>
-        <p>A medical student who leads Prevayu's clinical direction and our panel of licensed doctors. She turns what practicing physicians see every day into care families can actually follow.</p>
-      </div>
-      <div class="founder reveal">
-        <div class="role">Co-founder · CEO</div>
-        <h3>Asrith Cheepurupalli</h3>
-        <p>A design engineer who ships fast, moving into health for the reason that matters most. Owns the product that puts a guide in every family's pocket.</p>
-      </div>
-    </div>
-    <p class="lede" style="margin-top:2.5rem;max-width:64ch">Backed by licensed doctors across pulmonology, orthopaedics, oncology, and more, who supervise our protocols and care.</p>
-    <a class="btn ghost" href="/about" style="margin-top:1.6rem">Our story</a>
   </div>
 </section>
 
 <!-- Closing -->
 <section id="start" class="inv">
   <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:1.8rem"><span>Prevention over cure</span><b>Proven, not preached</b></div>
-    <h2 class="close-head">Make your family<br>health conscious.</h2>
+    <div class="eyebrow" style="margin-bottom:1.8rem"><span>The pilot is starting</span><b>Visakhapatnam and Bengaluru</b></div>
+    <h2 class="close-head">Find it before it<br>finds your family.</h2>
     <div class="close-cta">
-      <a class="btn lg" href="/get-started">Start with your family</a>
-      <a class="btn ghost lg" href="/how-it-works">How it works</a>
+      <a class="btn lg" href="/get-started">Join the pilot</a>
+      <a class="btn ghost lg" href="#check">Check your risk</a>
     </div>
   </div>
 </section>
@@ -397,112 +300,18 @@
   <div class="wrap foot-in">
     <a class="brand" href="/">Prevayu<sup>IN</sup></a>
     <div class="foot-links">
+      <a href="/#check">Risk check</a>
       <a href="/how-it-works">How it works</a>
-      <a href="/family-risk">Family risk</a>
       <a href="/body">The body</a>
       <a href="/about">About</a>
       <a href="/#faq">FAQ</a>
-      <a href="/get-started">Get started</a>
+      <a href="/get-started">Join the pilot</a>
     </div>
-    <div class="foot-note">Preventive health guidance · Vizag, India</div>
+    <div class="foot-note">Preventive care, not a diagnosis · Visakhapatnam, India</div>
   </div>
 </footer>
 
-<script>
-  (function () {
-    var scores  = [68,69,71,70,73,75,74,77,79,80,81,82];
-    var months  = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    var W = 1000, H = 320, padY = 34;
-    var minS = 60, maxS = 88;
-    var line = document.getElementById('scoreLine');
-    var dot  = document.getElementById('scoreDot');
-    var numEl = document.getElementById('scoreNum');
-    var monEl = document.getElementById('scoreMonth');
-    var delEl = document.getElementById('scoreDelta');
-    var scrub = document.getElementById('scrub');
-    var grid  = document.getElementById('grid');
-
-    function x(i){ return (i/(scores.length-1)) * W; }
-    function y(s){ return H - padY - ((s-minS)/(maxS-minS)) * (H - padY*2); }
-
-    for (var g=0; g<=4; g++){
-      var gy = padY + g*((H-padY*2)/4);
-      grid.innerHTML += '<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'"></line>';
-    }
-
-    function render(idx){
-      var pts = [];
-      for (var i=0;i<=idx;i++){ pts.push(x(i)+','+y(scores[i])); }
-      line.setAttribute('points', pts.join(' '));
-      dot.setAttribute('cx', x(idx));
-      dot.setAttribute('cy', y(scores[idx]));
-      numEl.textContent = scores[idx];
-      monEl.textContent = months[idx] + (idx===11 ? ' · now' : '');
-      var d = scores[idx]-scores[0];
-      delEl.textContent = idx===0 ? 'baseline' : (d>=0?'+':'') + d + ' pts since January';
-    }
-
-    scrub.addEventListener('input', function(){ render(parseInt(this.value,10)); });
-    render(0);
-
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var played = false;
-    var demoObs = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if (e.isIntersecting && !played){
-          played = true;
-          if (reduce){ scrub.value = 11; render(11); return; }
-          var i = 0;
-          var t = setInterval(function(){
-            i++; scrub.value = i; render(i);
-            if (i>=11) clearInterval(t);
-          }, 190);
-        }
-      });
-    }, { threshold: 0.4 });
-    var _scEl = document.getElementById('score-live'); if (_scEl) demoObs.observe(_scEl);
-  })();
-</script>
-<script>
-  (function () {
-    var withArr    = [76,78,79,80,81,82,83,84,84,85,85,86,86,87,87,88,88,89,89,90,90];
-    var withoutArr = [76,75,73,71,68,64,60,55,50,46,42,39,37,35,34,33,32,31,30,30,29];
-    var W = 1000, H = 380, pad = 30, minV = 25, maxV = 95;
-    var grid = document.getElementById('trajGrid');
-    var lw = document.getElementById('trajWith');
-    var lo = document.getElementById('trajWithout');
-    var dot = document.getElementById('trajDot');
-    if (!lw) return;
-    function x(i){ return i/(withArr.length-1) * W; }
-    function y(v){ return H - pad - (v-minV)/(maxV-minV) * (H - 2*pad); }
-    for (var g=0; g<=4; g++){ var gy = pad + g*((H-2*pad)/4); grid.innerHTML += '<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'"></line>'; }
-    function pts(arr){ var p=[]; for (var i=0;i<arr.length;i++){ p.push(x(i)+','+y(arr[i])); } return p.join(' '); }
-    lw.setAttribute('points', pts(withArr));
-    lo.setAttribute('points', pts(withoutArr));
-    dot.setAttribute('cx', x(withArr.length-1));
-    dot.setAttribute('cy', y(withArr[withArr.length-1]));
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    [lw, lo].forEach(function (el) {
-      var len = el.getTotalLength();
-      el.style.strokeDasharray = len;
-      el.style.strokeDashoffset = reduce ? 0 : len;
-      el.style.transition = 'stroke-dashoffset 1.7s ease';
-    });
-    dot.style.opacity = reduce ? 1 : 0;
-    dot.style.transition = 'opacity .4s ease 1.5s';
-    var obs = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting) {
-          lw.style.strokeDashoffset = 0;
-          lo.style.strokeDashoffset = 0;
-          dot.style.opacity = 1;
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    obs.observe(document.getElementById('outcome'));
-  })();
-</script>
 <script src="/app.js"></script>
+<script src="/check.js"></script>
 </body>
 </html>
