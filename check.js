@@ -104,6 +104,7 @@
     ansEl.textContent = a[0];
     msgEl.textContent = a[1];
     cta.hidden = bHi === 'low';
+    cta.href = '/get-started?who=' + who() + '&score=' + (unsure ? base + '-' + hi : base) + '&band=' + (bLo === bHi ? bHi : bLo + '-to-' + bHi);
     reset.hidden = false;
     card.classList.add('done');
   }

@@ -38,71 +38,127 @@
   </div>
 </nav>
 
-<header class="page-hero">
+<header class="page-hero join-hero">
   <div class="wrap">
-    <div class="eyebrow"><span>Get started</span></div>
-    <h1>Join the<br>pilot.</h1>
-    <p class="lede">Our first pilot is in Visakhapatnam and Bengaluru. Tell us who you want to look after, and we will reach out on WhatsApp to map your family.</p>
+    <div class="eyebrow"><span>Join the pilot</span><b>Visakhapatnam and Bengaluru</b></div>
+    <h1>Look after the people<br>you love, early.</h1>
+    <p class="lede">Three quick steps, under a minute. We reach out on WhatsApp within a day to map your family and see who to check first.</p>
+    <div class="pilot-facts">
+      <div><b>Free</b><span>Family map and risk check for every adult</span></div>
+      <div><b>At lab cost</b><span>Only the tests guidelines call for</span></div>
+      <div><b>₹1,499 a month</b><span>Doctor-led weekly care, only if you choose it</span></div>
+      <div><b>30 to 50 families</b><span>In our first pilot</span></div>
+    </div>
   </div>
 </header>
 
-<section>
-  <div class="wrap">
-    <form class="form" id="leadForm" action="https://formspree.io/f/maqrlewz" method="POST" novalidate>
+<section class="join-sec">
+  <div class="wrap join">
+    <form class="join-form" id="joinForm" action="https://formspree.io/f/maqrlewz" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New Prevayu pilot request">
-      <div class="field">
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" placeholder="Asrith" required>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="phone">Phone or WhatsApp</label>
-          <input id="phone" name="phone" type="tel" placeholder="+91" required>
+      <input type="hidden" name="risk_check" id="riskField" value="">
+
+      <div class="join-prog" aria-hidden="true"><span class="on"></span><span></span><span></span><em id="stepLabel">Step 1 of 3</em></div>
+
+      <!-- Step 1 -->
+      <fieldset class="jstep on" data-step="1">
+        <legend>Who do you want to look after?</legend>
+        <p class="jhint">Pick one. You can add others later.</p>
+        <div class="jcards">
+          <label><input type="radio" name="who" value="Me"><span><i class="glyph g1"></i><b>Me</b><small>Start with yourself</small></span></label>
+          <label><input type="radio" name="who" value="My mother"><span><i class="glyph g1"></i><b>My mother</b><small>One parent</small></span></label>
+          <label><input type="radio" name="who" value="My father"><span><i class="glyph g1"></i><b>My father</b><small>One parent</small></span></label>
+          <label><input type="radio" name="who" value="My parents"><span><i class="glyph g2"></i><b>My parents</b><small>Both of them</small></span></label>
+          <label><input type="radio" name="who" value="My whole family"><span><i class="glyph g4"></i><b>My whole family</b><small>Parents, you, siblings</small></span></label>
         </div>
-        <div class="field">
-          <label for="email">Email (optional)</label>
-          <input id="email" name="email" type="email" placeholder="you@email.com">
+        <div class="jnav"><button class="btn lg" type="button" data-next disabled>Continue</button></div>
+      </fieldset>
+
+      <!-- Step 2 -->
+      <fieldset class="jstep" data-step="2">
+        <legend>What runs in the family?</legend>
+        <p class="jhint">Pick all that apply. "Not sure" is a fine answer; finding out is part of what we do.</p>
+        <div class="jchips">
+          <label><input type="checkbox" name="runs" value="Type 2 diabetes"><span>Type 2 diabetes</span></label>
+          <label><input type="checkbox" name="runs" value="High blood pressure"><span>High blood pressure</span></label>
+          <label><input type="checkbox" name="runs" value="Heart attack or stroke"><span>Heart attack or stroke</span></label>
+          <label><input type="checkbox" name="runs" value="Cancer"><span>Cancer</span></label>
+          <label><input type="checkbox" name="runs" value="Weak bones or arthritis"><span>Weak bones or arthritis</span></label>
+          <label><input type="checkbox" name="runs" value="Thyroid"><span>Thyroid</span></label>
+          <label><input type="checkbox" name="runs" value="Not sure" data-exclusive><span>Not sure</span></label>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="city">City</label>
-          <input id="city" name="city" type="text" placeholder="Visakhapatnam">
+        <p class="jq" id="whereQ">Where do they live?</p>
+        <div class="jchips">
+          <label><input type="radio" name="city" value="Visakhapatnam"><span>Visakhapatnam</span></label>
+          <label><input type="radio" name="city" value="Bengaluru"><span>Bengaluru</span></label>
+          <label><input type="radio" name="city" value="Hyderabad"><span>Hyderabad</span></label>
+          <label><input type="radio" name="city" value="Elsewhere in Andhra or Telangana"><span>Elsewhere in Andhra or Telangana</span></label>
+          <label><input type="radio" name="city" value="Other"><span>Somewhere else</span></label>
         </div>
-        <div class="field">
-          <label for="who">Who is this for?</label>
-          <select id="who" name="who" required>
-            <option value="" disabled selected>Choose one</option>
-            <option>My parents</option>
-            <option>My whole family</option>
-            <option>My mother</option>
-            <option>Myself</option>
-          </select>
+        <input class="jinput" type="text" name="city_other" id="cityOther" placeholder="Which city?" hidden>
+        <div class="jnav"><button class="btn ghost lg" type="button" data-back>Back</button><button class="btn lg" type="button" data-next disabled>Continue</button></div>
+      </fieldset>
+
+      <!-- Step 3 -->
+      <fieldset class="jstep" data-step="3">
+        <legend>Where do we reach you?</legend>
+        <p class="jhint">Just your name and WhatsApp number. We message once to set up a call. No spam.</p>
+        <div class="field"><label for="jname">Your name</label><input id="jname" name="name" type="text" autocomplete="name" placeholder="Priya"></div>
+        <div class="field"><label for="jphone">WhatsApp number</label>
+          <div class="phone"><span>+91</span><input id="jphone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98765 43210" maxlength="12"></div>
+          <p class="jerr" id="phoneErr" hidden>That doesn't look like a 10-digit Indian mobile number.</p>
         </div>
-      </div>
-      <div class="field">
-        <label for="worry">What are you most worried about? (optional)</label>
-        <textarea id="worry" name="worry" placeholder="Diabetes runs in our family and I want to get ahead of it for my parents."></textarea>
-      </div>
-      <button class="btn lg" type="submit">Join the pilot</button>
-      <p class="form-note">We reach out on WhatsApp within a day. No spam. The family risk check is free, and you decide on anything paid after that.</p>
-      <p class="form-note" id="formError" style="display:none">Something went wrong sending that. Please try again, or message us on WhatsApp.</p>
+        <div class="field"><label for="jemail">Email <span class="opt">(optional)</span></label><input id="jemail" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        <label class="consent"><input type="checkbox" id="jconsent" name="consent" value="yes"><span>I'm happy for Prevayu to contact me on WhatsApp about the pilot.</span></label>
+        <div class="jnav"><button class="btn ghost lg" type="button" data-back>Back</button><button class="btn lg" type="submit" id="jsubmit" disabled>Join the pilot</button></div>
+        <p class="jerr" id="sendErr" hidden>Something went wrong sending that. Please try again in a moment.</p>
+      </fieldset>
     </form>
 
-    <div class="form-success" id="formSuccess">
-      <h3>Thank you. You're on the list.</h3>
-      <p>We will message you on WhatsApp within a day to map your family and see who to check first.</p>
+    <!-- Live family card -->
+    <aside class="jcard" aria-live="polite">
+      <div class="eyebrow"><span>Your request</span></div>
+      <div class="jfam" id="famViz" aria-hidden="true">
+        <span class="n p" data-k="mother">Mother</span><span class="n p" data-k="father">Father</span>
+        <span class="n c" data-k="me">You</span><span class="n s" data-k="sib">Siblings</span>
+      </div>
+      <dl class="jsum">
+        <div><dt>Looking after</dt><dd id="sumWho">Not chosen yet</dd></div>
+        <div><dt>Runs in the family</dt><dd id="sumRuns">Not chosen yet</dd></div>
+        <div><dt>Lives in</dt><dd id="sumCity">Not chosen yet</dd></div>
+        <div id="sumRiskRow" hidden><dt>Risk check</dt><dd id="sumRisk"></dd></div>
+      </dl>
+      <div class="jfirst" id="firstStep">
+        <div class="eyebrow"><span>What we would check first</span></div>
+        <p id="firstText">Choose who you want to look after, and we will show what usually comes first.</p>
+      </div>
+    </aside>
+
+    <!-- Success -->
+    <div class="jdone" id="joinDone" hidden>
+      <div class="eyebrow"><span>You're on the list</span></div>
+      <h2 class="big-head">Thank you. We'll message you on WhatsApp within a day.</h2>
+      <ol class="jtime">
+        <li><b>Today</b><span>We have your request.</span></li>
+        <li><b>Within a day</b><span>A short WhatsApp call to map who had what in the family.</span></li>
+        <li><b>First week</b><span>A risk check and blood pressure reading for each adult. If someone needs tests, a doctor tells you which ones and why.</span></li>
+        <li><b>Then, if you choose</b><span>Weekly doctor-led care for the person who needs it most.</span></li>
+      </ol>
+      <div class="jdone-cta">
+        <a class="btn lg" href="/#check">Check someone else's risk</a>
+        <a class="btn ghost lg" id="shareWa" href="#" target="_blank" rel="noopener">Tell a sibling on WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="inv">
   <div class="wrap">
-    <div class="eyebrow" style="margin-bottom:1.6rem"><span>What happens next</span></div>
+    <div class="eyebrow" style="margin-bottom:1.6rem"><span>Good to know</span></div>
     <div class="m-grid">
-      <div class="m-item reveal"><span>1 · We map your family</span><p>A short conversation about who had diabetes, high blood pressure or heart disease, and any reports you already have.</p></div>
-      <div class="m-item reveal"><span>2 · We check who is at risk</span><p>A risk check, blood pressure and waist for each adult. If someone needs tests, a doctor tells you which ones and why.</p></div>
-      <div class="m-item reveal"><span>3 · Care, if you want it</span><p>A doctor-led plan with a weekly check-in from your guide. ₹1,499 a month per person enrolled, tests at lab cost.</p></div>
+      <div class="m-item reveal"><span>Is joining free?</span><p>Yes. The family map and risk check are free. Tests are billed at the lab's price, and care is ₹1,499 a month only if you choose it.</p></div>
+      <div class="m-item reveal"><span>Do I commit to anything?</span><p>No. Joining the pilot means we call you. You decide after that.</p></div>
+      <div class="m-item reveal"><span>What happens to my details?</span><p>We use them only to contact you about the pilot. We never sell them.</p></div>
     </div>
   </div>
 </section>
@@ -123,5 +179,6 @@
 </footer>
 
 <script src="/app.js"></script>
+<script src="/join.js"></script>
 </body>
 </html>
