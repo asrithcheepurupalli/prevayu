@@ -1,4 +1,12 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "prevayu.vercel.app" }],
+      "destination": "https://www.prevayu.com/:path*",
+      "permanent": true
+    }
+  ]
 }

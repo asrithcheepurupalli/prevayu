@@ -128,7 +128,7 @@
     form.hidden = true;
     document.querySelector('.jcard').hidden = true;
     var d = $('joinDone'); d.hidden = false;
-    var msg = 'I signed our family up for the Prevayu pilot, a free check of what runs in the family and who should get tested first: https://prevayu.vercel.app';
+    var msg = 'I signed our family up for the Prevayu pilot, a free check of what runs in the family and who should get tested first: https://prevayu.com';
     $('shareWa').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
     d.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
