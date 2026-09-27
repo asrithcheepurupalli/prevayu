@@ -525,3 +525,31 @@ a.bx-item:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
   .check-r:not(.done) .check-band { margin: 0; justify-self: start; }
   .check-r:not(.done) .check-bar { margin: .5rem 0 0; }
 }
+
+/* charts (real data) */
+.cascades { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 3rem; }
+@media (max-width: 860px) { .cascades { grid-template-columns: 1fr; gap: 2.6rem; } }
+.casc h3 { font-size: 1.1rem; letter-spacing: -0.015em; margin-bottom: 1.1rem; }
+.cr { display: grid; grid-template-columns: 9.5rem 1fr 2.6rem; gap: .9rem; align-items: center; margin-bottom: .6rem; }
+.cr span { color: var(--inv-mut); font-size: .92rem; }
+.cr b { text-align: right; font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.ct { height: 26px; background: var(--inv-line); position: relative; }
+.ct i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--inv-ink); transition: width 1s cubic-bezier(.2,.7,.2,1) .2s; }
+.casc.in .ct i, .casc:not(.reveal) .ct i { width: var(--w); }
+.casc .cite, .trial .cite { display: block; margin-top: .8rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--inv-mut); opacity: .8; }
+.drift { margin-top: 2.4rem; color: var(--inv-mut); max-width: 60ch; font-size: 1rem; line-height: 1.5; }
+@media (max-width: 520px) { .cr { grid-template-columns: 7rem 1fr 2.2rem; } }
+.trials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; margin-top: 3rem; }
+@media (max-width: 860px) { .trials { grid-template-columns: 1fr; gap: 2.6rem; } }
+.trial h3 { font-size: 1.05rem; letter-spacing: -0.015em; min-height: 2.6em; }
+.trial .cite { color: var(--faint); }
+.vb2 { display: flex; gap: 1rem; align-items: flex-end; height: 200px; border-bottom: 2px solid var(--ink); margin-top: 1rem; }
+.vb2 > div { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+.vb2 b { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: .4rem; font-variant-numeric: tabular-nums; }
+.vb2 i { display: block; height: 0; background: var(--ink); transition: height 1s cubic-bezier(.2,.7,.2,1) .2s; }
+.vb2 i.soft { background: var(--line); }
+.trial.in .vb2 i { height: var(--h); }
+.vb2 span { position: absolute; bottom: -1.7rem; left: 0; font-family: var(--mono); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); white-space: nowrap; }
+.trial { padding-bottom: 1.8rem; }
+@media (prefers-reduced-motion: reduce) { .ct i, .vb2 i { transition: none; } }
+.vb2 { margin-bottom: 2.1rem; }
