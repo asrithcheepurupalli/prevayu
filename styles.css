@@ -553,3 +553,55 @@ a.bx-item:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
 .trial { padding-bottom: 1.8rem; }
 @media (prefers-reduced-motion: reduce) { .ct i, .vb2 i { transition: none; } }
 .vb2 { margin-bottom: 2.1rem; }
+
+/* risk check v2 */
+.who { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: 2.2rem; }
+.who-l { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); margin-right: .6rem; }
+.who label { cursor: pointer; }
+.who input { position: absolute; opacity: 0; pointer-events: none; }
+.who span:not(.who-l) { display: inline-block; padding: .55rem 1rem; border: 1px solid var(--line); font-size: .95rem; transition: all .15s; }
+.who input:checked + span { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.who input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+.check { margin-top: 2rem; }
+.q-help { margin-top: .7rem; font-size: .88rem; color: var(--mut); line-height: 1.45; max-width: 56ch; }
+.check-ans { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin-top: .8rem; }
+.check-r .check-num { margin-top: .9rem; }
+.check-r .check-num b { font-size: clamp(2.2rem, 4.5vw, 3rem); }
+.check-bar em { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, var(--ink) 0 3px, transparent 3px 7px); opacity: .45; }
+.more { margin-top: 3.5rem; }
+.more-h { font-size: 1.25rem; letter-spacing: -0.02em; }
+.more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.2rem; }
+@media (max-width: 860px) { .more-grid { grid-template-columns: 1fr; } }
+.more-card { border: 1px solid var(--line); padding: 1.5rem; }
+.more-q { font-weight: 700; font-size: 1.05rem; line-height: 1.35; margin-top: .8rem; }
+.more-a { margin-top: 1rem; font-size: .98rem; line-height: 1.5; }
+.more-a:empty { display: none; }
+.bp-in { display: flex; align-items: flex-end; gap: .8rem; margin-top: 1rem; }
+.bp-in label { display: grid; gap: .35rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--mut); }
+.bp-in input { width: 7.5rem; font: inherit; font-family: var(--sans); font-size: 1.3rem; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--ink); background: var(--bg); border: 1px solid var(--line); padding: .6rem .8rem; }
+.bp-in input:focus { outline: none; border-color: var(--ink); }
+.bp-in > span { font-size: 1.6rem; color: var(--mut); padding-bottom: .5rem; }
+.linkbtn { background: none; border: 0; padding: 0; margin-top: .9rem; font: inherit; font-size: .9rem; color: var(--mut); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.linkbtn:hover { color: var(--ink); }
+.opts.row { grid-template-columns: repeat(3, 1fr); margin-top: 1rem; }
+@media (max-width: 900px) {
+  .check-r:not(.done) .check-ans { font-size: 1.05rem; margin: 0; grid-column: 2; }
+  .check-r:not(.done) .check-num b { font-size: 2rem; }
+  .check-r:not(.done) .check-num i { display: none; }
+}
+.sos { margin-top: 2.2rem; padding: 1.1rem 1.3rem; border: 1.5px solid var(--ink); font-size: 1rem; line-height: 1.5; max-width: 70ch; }
+
+/* family map table */
+.fmap { margin-top: 1.6rem; }
+.fm-head, .fm-row { display: grid; grid-template-columns: 1fr 1.3fr 1.5fr; gap: 2rem; }
+.fm-head { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); padding-bottom: .8rem; border-bottom: 2px solid var(--ink); }
+.fm-row { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.fm-c b { display: block; font-size: 1.08rem; letter-spacing: -0.015em; }
+.fm-row p { color: var(--mut); font-size: .95rem; line-height: 1.5; }
+.fm-row .cite { display: block; margin-top: .4rem; font-family: var(--mono); font-size: .64rem; letter-spacing: .04em; color: var(--faint); }
+.tag { display: inline-block; margin-top: .6rem; font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .55rem; border: 1px solid var(--ink); }
+.tag.prevent { background: var(--ink); color: var(--bg); }
+.tag.screen { border-style: solid; }
+.tag.build { border-style: dashed; }
+.tag.tell { border-color: var(--line); color: var(--mut); }
+@media (max-width: 800px) { .fm-head { display: none; } .fm-row { grid-template-columns: 1fr; gap: .7rem; } }

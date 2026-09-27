@@ -90,17 +90,44 @@
   </div>
 </section>
 
+<!-- The signs we skip -->
+<section id="signs">
+  <div class="wrap">
+    <div class="eyebrow"><span>The signs we skip</span></div>
+    <h2 class="big-head" style="margin-top:1rem">Your body is already<br>warning you.</h2>
+    <p class="lede" style="margin-top:1.2rem">Family history is one signal. The body gives others, and we are taught to wait and hope they pass. Knowing which ones matter is half of catching things early.</p>
+    <div class="signs">
+      <div class="sign reveal"><div class="quote">"It's just gas."</div><h3>Chest tightness on effort or after meals</h3><p>Often blamed on the stomach. It can be the heart.</p></div>
+      <div class="sign reveal"><div class="quote">"It's just age."</div><h3>Always tired, breathless on the stairs</h3><p>Brushed off as getting older. Can point to the heart, anaemia or the thyroid.</p></div>
+      <div class="sign reveal"><div class="quote">"It's just stress."</div><h3>Constant thirst, waking at night to urinate</h3><p>A classic sign of rising blood sugar.</p></div>
+      <div class="sign reveal"><div class="quote">"It'll heal on its own."</div><h3>Cuts and wounds that heal slowly</h3><p>Common when blood sugar runs high for a while.</p></div>
+      <div class="sign reveal"><div class="quote">"It's normal for women."</div><h3>Periods that changed, heavy bleeding, hot flashes</h3><p>Real hormonal shifts that deserve answers, not a shrug.</p></div>
+      <div class="sign reveal"><div class="quote">"Just body pain."</div><h3>A small fall that broke a bone</h3><p>A break from a minor fall can mean bones have thinned. Worth a check.</p></div>
+    </div>
+    <p class="sos reveal"><b>Chest pain that won't go away, or pain with sweating or breathlessness, is an emergency.</b> Call 108 or go to a hospital now. Don't wait to see if it passes.</p>
+    <p class="form-note" style="margin-top:1.2rem">These are not diagnoses. The point is to notice, and to ask. When in doubt, ask a doctor. Our guides help you get to one.</p>
+  </div>
+</section>
+
 <!-- The check -->
 <section id="check">
   <div class="wrap">
-    <div class="eyebrow"><span>Free risk check</span><b>Four questions · under a minute</b></div>
-    <h2 class="big-head" style="margin-top:1rem;max-width:20ch">Start with one person. You, or a parent.</h2>
-    <p class="lede" style="margin-top:1.2rem;max-width:58ch">This is the Indian Diabetes Risk Score, a screening tool built on Indian data and used by doctors across the country. It runs on this page. Nothing you enter is sent anywhere.</p>
+    <div class="eyebrow"><span>Free risk check</span><b>Takes a minute</b></div>
+    <h2 class="big-head" style="margin-top:1rem;max-width:18ch" id="checkTitle">Should you get a blood test for diabetes?</h2>
+    <p class="lede" style="margin-top:1.2rem;max-width:60ch">Four questions from the Indian Diabetes Risk Score, a tool built on Indian data that doctors use to decide who to test. It runs on this page. Nothing you enter is sent anywhere.</p>
+
+    <div class="who" role="radiogroup" aria-label="Who are you checking for?">
+      <span class="who-l">Checking for</span>
+      <label><input type="radio" name="who" value="me" checked><span>Me</span></label>
+      <label><input type="radio" name="who" value="mother"><span>My mother</span></label>
+      <label><input type="radio" name="who" value="father"><span>My father</span></label>
+      <label><input type="radio" name="who" value="other"><span>Someone else</span></label>
+    </div>
 
     <div class="check">
       <form class="check-q" id="idrsForm" onsubmit="return false">
         <fieldset>
-          <legend><span class="qn">01</span>Age</legend>
+          <legend><span class="qn">01</span><span data-q="age">How old are you?</span></legend>
           <div class="opts">
             <label><input type="radio" name="age" value="0"><span>Under 35</span></label>
             <label><input type="radio" name="age" value="20"><span>35 to 49</span></label>
@@ -108,8 +135,8 @@
           </div>
         </fieldset>
         <fieldset>
-          <legend><span class="qn">02</span>Waist, measured at the belly button</legend>
-          <div class="opts seg" role="radiogroup" aria-label="Sex, for waist ranges">
+          <legend><span class="qn">02</span><span data-q="waist">What is your waist, measured at the belly button?</span></legend>
+          <div class="opts seg" id="sexSeg" role="radiogroup" aria-label="Sex, for waist ranges">
             <label><input type="radio" name="sex" value="f" checked><span>Woman</span></label>
             <label><input type="radio" name="sex" value="m"><span>Man</span></label>
           </div>
@@ -117,10 +144,12 @@
             <label><input type="radio" name="waist" value="0"><span data-f="Under 80 cm" data-m="Under 90 cm">Under 80 cm</span></label>
             <label><input type="radio" name="waist" value="10"><span data-f="80 to 89 cm" data-m="90 to 99 cm">80 to 89 cm</span></label>
             <label><input type="radio" name="waist" value="20"><span data-f="90 cm or more" data-m="100 cm or more">90 cm or more</span></label>
+            <label><input type="radio" name="waist" value="unsure"><span>Not sure yet</span></label>
           </div>
+          <p class="q-help">No tape at home? Wrap a string or a phone cable around the belly at the belly button, mark it, and lay it along a ruler.</p>
         </fieldset>
         <fieldset>
-          <legend><span class="qn">03</span>How active are they, most weeks?</legend>
+          <legend><span class="qn">03</span><span data-q="act">How active are you, most weeks?</span></legend>
           <div class="opts">
             <label><input type="radio" name="act" value="0"><span>Regular vigorous exercise, or hard physical work</span></label>
             <label><input type="radio" name="act" value="10"><span>Regular moderate exercise, or moderately active work</span></label>
@@ -129,7 +158,7 @@
           </div>
         </fieldset>
         <fieldset>
-          <legend><span class="qn">04</span>Do their parents have diabetes?</legend>
+          <legend><span class="qn">04</span><span data-q="fam">Do your parents have diabetes?</span></legend>
           <div class="opts">
             <label><input type="radio" name="fam" value="0"><span>Neither parent</span></label>
             <label><input type="radio" name="fam" value="10"><span>One parent</span></label>
@@ -139,16 +168,43 @@
       </form>
 
       <aside class="check-r" id="idrsResult" aria-live="polite">
-        <div class="eyebrow"><span>Result</span></div>
-        <div class="check-num"><b id="idrsScore">0</b><i>/ 100</i></div>
-        <div class="check-band" id="idrsBand">Answer all four</div>
-        <div class="check-bar"><i id="idrsBar"></i><span style="left:30%"></span><span style="left:60%"></span></div>
+        <div class="eyebrow"><span>The answer</span></div>
+        <div class="check-ans" id="idrsAns">Answer all four</div>
+        <div class="check-num"><b id="idrsScore">0</b><i id="idrsOf">/ 100 on the risk score</i></div>
+        <div class="check-bar"><i id="idrsBar"></i><em id="idrsRange"></em><span style="left:30%"></span><span style="left:60%"></span></div>
         <div class="check-scale"><span>Low</span><span>Moderate</span><span>High</span></div>
         <p class="check-msg" id="idrsMsg">Pick one answer for each question. The score adds up as you go.</p>
         <a class="btn" id="idrsCta" href="/get-started" hidden>Join the pilot</a>
         <button class="btn ghost" id="idrsReset" type="button" hidden>Check someone else</button>
-        <p class="check-note">A screening score, not a diagnosis. Only a blood test can tell. Mohan et al., JAPI 2005.</p>
+        <p class="check-note">This answers one question: whether a diabetes blood test is worth doing. It is a screening score, not a diagnosis. Indian Diabetes Risk Score, Mohan et al., JAPI 2005.</p>
       </aside>
+    </div>
+
+    <div class="more">
+      <h3 class="more-h">Two more things worth knowing</h3>
+      <div class="more-grid">
+        <div class="more-card" id="bpCard">
+          <div class="eyebrow"><span>Blood pressure</span></div>
+          <p class="more-q" data-q="bp">Do you know your last blood pressure reading?</p>
+          <div class="bp-in">
+            <label>Top number<input type="number" inputmode="numeric" id="bpSys" min="70" max="260" placeholder="130"></label>
+            <span>/</span>
+            <label>Bottom number<input type="number" inputmode="numeric" id="bpDia" min="40" max="160" placeholder="85"></label>
+          </div>
+          <button class="linkbtn" type="button" id="bpUnknown">I don't know it</button>
+          <p class="more-a" id="bpOut" aria-live="polite"></p>
+        </div>
+        <div class="more-card" id="heartCard">
+          <div class="eyebrow"><span>Heart, in the family</span></div>
+          <p class="more-q" data-q="heart">Did your father have a heart attack or stroke before 55, or your mother before 65?</p>
+          <div class="opts row">
+            <label><input type="radio" name="heart" value="yes"><span>Yes</span></label>
+            <label><input type="radio" name="heart" value="no"><span>No</span></label>
+            <label><input type="radio" name="heart" value="unsure"><span>Not sure</span></label>
+          </div>
+          <p class="more-a" id="heartOut" aria-live="polite"></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -291,6 +347,7 @@
       <details><summary>Does the AI give medical advice?</summary><p>No. India's telemedicine rules say only a registered doctor can advise you personally, and that is how we work. The AI helps your doctor and guide keep up, and answers general health questions.</p></details>
       <details><summary>Who is the guide?</summary><p>A person trained by our doctors to check in with you every week, take readings and book tests. Guides pass on your doctor's advice; they don't give their own.</p></details>
       <details><summary>Why not a full body checkup?</summary><p>Big packages test many things healthy people don't need, which leads to more worry and more tests. We start with the few tests guidelines recommend, for the person who needs them.</p></details>
+      <details><summary>Is Prevayu only about diabetes?</summary><p>No. We map everything that runs in your family, from heart disease to certain cancers, weak bones and arthritis, and tell you what can be done early for each. Our first care programme focuses on diabetes, blood pressure and the heart, where acting early is best proven. <a href="/family-risk" style="text-decoration:underline">See the full map</a>.</p></details>
       <details><summary>Do I have to change my doctor?</summary><p>No. We work alongside your family doctor and send them a one-page summary whenever you want.</p></details>
       <details><summary>Where is Prevayu available?</summary><p>Our first pilot is in Visakhapatnam and Bengaluru, for families with parents in Andhra Pradesh. Join the pilot and we'll reach out.</p></details>
     </div>
