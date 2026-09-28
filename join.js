@@ -17,8 +17,8 @@
     'Not sure': 'A short call to piece the family history together. Most families know more than they think.'
   };
   var WHO_NODES = {
-    'Me': ['me'], 'My mother': ['mother'], 'My father': ['father'],
-    'My parents': ['mother', 'father'], 'My whole family': ['mother', 'father', 'me', 'sib']
+    'Me': ['me'], 'Me and a parent': ['me', 'mother'],
+    'My whole family': ['mother', 'father', 'me', 'sib'], 'Someone else in my family': ['sib']
   };
 
   function checked(name) { return [].slice.call(form.querySelectorAll('input[name=' + name + ']:checked')).map(function (i) { return i.value; }); }
@@ -66,9 +66,9 @@
     var lines = runs.map(function (r) { return FIRST[r]; }).filter(Boolean).slice(0, 3);
     $('firstText').innerHTML = lines.length
       ? '<ul>' + lines.map(function (l) { return '<li>' + l + '</li>'; }).join('') + '</ul>'
-      : (who ? 'Tell us what runs in the family, and we will show what usually comes first.' : 'Choose who you want to look after, and we will show what usually comes first.');
+      : (who ? 'Tell us what runs in the family, and we will show what usually comes first.' : 'Choose who this is for, and we will show what usually comes first.');
 
-    var here = who === 'Me' ? 'Where do you live?' : 'Where do they live?';
+    var here = who === 'Someone else in my family' ? 'Where do they live?' : 'Where do you live?';
     $('whereQ').textContent = here;
   }
 
@@ -98,7 +98,7 @@
 
   // Carry over a result from the homepage risk check
   var q = new URLSearchParams(location.search);
-  var map = { me: 'Me', mother: 'My mother', father: 'My father' };
+  var map = { me: 'Me', other: 'Someone else in my family' };
   if (q.get('score')) {
     var whoTxt = { me: 'you', mother: 'your mother', father: 'your father', other: 'them' }[q.get('who')] || 'them';
     var riskTxt = q.get('score').replace('-', ' to ') + ' / 100' + (q.get('band') ? ', ' + q.get('band').replace(/-/g, ' ') : '') + ', for ' + whoTxt;
@@ -128,7 +128,7 @@
     form.hidden = true;
     document.querySelector('.jcard').hidden = true;
     var d = $('joinDone'); d.hidden = false;
-    var msg = 'I signed our family up for the Prevayu pilot, a free check of what runs in the family and who should get tested first: https://prevayu.com';
+    var msg = 'I signed up for the Prevayu pilot, a free check of whether what runs in my family is heading for me: https://prevayu.com';
     $('shareWa').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
     d.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

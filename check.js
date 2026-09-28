@@ -43,9 +43,10 @@
   var BAND = function (t) { return t >= 60 ? 'high' : t >= 30 ? 'moderate' : 'low'; };
   var LABEL = { low: 'Low', moderate: 'Moderate', high: 'High' };
 
-  function answerFor(band, age35) {
+  function answerFor(band, age35, famHx) {
     if (band === 'high') return ['Yes, soon.', 'At this score, a fasting glucose and HbA1c test is worth doing soon, read by a doctor. Many people here already have raised sugar without knowing.'];
     if (band === 'moderate') return ['Yes, in the next few months.', 'A fasting glucose and HbA1c test is the sensible next step. Activity and waist are the two things you can change.'];
+    if (famHx && !age35) return ['Maybe, check your BMI.', 'Low on this score. But with a parent who has diabetes, guidelines suggest a test at any age if BMI is 23 or more. If it is under 23, stay active and check again in a few years.'];
     if (age35) return ['One routine test.', 'Low on this score. Guidelines still suggest a first sugar test from age 35, so one routine fasting glucose or HbA1c is sensible.'];
     return ['Not yet.', 'Low on this score. Stay active, keep an eye on the waist, and check again in a few years or if anything changes.'];
   }
@@ -93,17 +94,18 @@
     }
 
     var age35 = +val('age') >= 20;
+    var famHx = +val('fam') > 0;
     var bLo = BAND(base), bHi = BAND(hi);
     var a;
     if (bLo === bHi) {
-      a = answerFor(bLo, age35);
+      a = answerFor(bLo, age35, famHx);
     } else {
-      var top = answerFor(bHi, age35);
+      var top = answerFor(bHi, age35, famHx);
       a = [top[0], 'Somewhere between ' + LABEL[bLo].toLowerCase() + ' and ' + LABEL[bHi].toLowerCase() + ' until the waist is measured. ' + top[1]];
     }
     ansEl.textContent = a[0];
     msgEl.textContent = a[1];
-    cta.hidden = bHi === 'low';
+    cta.hidden = bHi === 'low' && !(famHx && !age35);
     cta.href = '/get-started?who=' + who() + '&score=' + (unsure ? base + '-' + hi : base) + '&band=' + (bLo === bHi ? bHi : bLo + '-to-' + bHi);
     reset.hidden = false;
     card.classList.add('done');

@@ -33,7 +33,7 @@
    "url": "https://www.prevayu.com/",
    "logo": "https://www.prevayu.com/icon-512.png",
    "email": "care@prevayu.com",
-   "description": "Preventive care for Indian families: find the family member most likely to develop diabetes, high blood pressure or heart disease, and keep them in care.",
+   "description": "Preventive care for adults 25 to 40 with a family history of diabetes, high blood pressure or heart disease: find it early, then stop it with a doctor-led team.",
    "areaServed": [
     "Visakhapatnam",
     "Bengaluru",
@@ -104,8 +104,8 @@
 <header class="page-hero join-hero">
   <div class="wrap">
     <div class="eyebrow"><span>Join the pilot</span><b>Visakhapatnam and Bengaluru</b></div>
-    <h1>Look after the people<br>you love, early.</h1>
-    <p class="lede">Three quick steps, under a minute. We reach out on WhatsApp within a day to map your family and see who to check first.</p>
+    <h1>Start with you.<br>Add your family later.</h1>
+    <p class="lede">Three quick steps, under a minute. We reach out on WhatsApp within a day to map your family and see what to check first.</p>
     <div class="pilot-facts">
       <div><b>Free</b><span>Family map and risk check for every adult</span></div>
       <div><b>At lab cost</b><span>Only the tests guidelines call for</span></div>
@@ -125,14 +125,13 @@
 
       <!-- Step 1 -->
       <fieldset class="jstep on" data-step="1">
-        <legend>Who do you want to look after?</legend>
+        <legend>Who is this for?</legend>
         <p class="jhint">Pick one. You can add others later.</p>
         <div class="jcards">
-          <label><input type="radio" name="who" value="Me"><span><i class="glyph g1"></i><b>Me</b><small>Start with yourself</small></span></label>
-          <label><input type="radio" name="who" value="My mother"><span><i class="glyph g1"></i><b>My mother</b><small>One parent</small></span></label>
-          <label><input type="radio" name="who" value="My father"><span><i class="glyph g1"></i><b>My father</b><small>One parent</small></span></label>
-          <label><input type="radio" name="who" value="My parents"><span><i class="glyph g2"></i><b>My parents</b><small>Both of them</small></span></label>
-          <label><input type="radio" name="who" value="My whole family"><span><i class="glyph g4"></i><b>My whole family</b><small>Parents, you, siblings</small></span></label>
+          <label><input type="radio" name="who" value="Me"><span><i class="glyph g1"></i><b>Me</b><small>Find out if it's heading for you</small></span></label>
+          <label><input type="radio" name="who" value="Me and a parent"><span><i class="glyph g2"></i><b>Me and a parent</b><small>Your parent joins as a second member</small></span></label>
+          <label><input type="radio" name="who" value="My whole family"><span><i class="glyph g4"></i><b>My whole family</b><small>You, your parents, your siblings</small></span></label>
+          <label><input type="radio" name="who" value="Someone else in my family"><span><i class="glyph g1"></i><b>Someone else</b><small>A sibling, spouse or parent</small></span></label>
         </div>
         <div class="jnav"><button class="btn lg" type="button" data-next disabled>Continue</button></div>
       </fieldset>
@@ -150,7 +149,7 @@
           <label><input type="checkbox" name="runs" value="Thyroid"><span>Thyroid</span></label>
           <label><input type="checkbox" name="runs" value="Not sure" data-exclusive><span>Not sure</span></label>
         </div>
-        <p class="jq" id="whereQ">Where do they live?</p>
+        <p class="jq" id="whereQ">Where do you live?</p>
         <div class="jchips">
           <label><input type="radio" name="city" value="Visakhapatnam"><span>Visakhapatnam</span></label>
           <label><input type="radio" name="city" value="Bengaluru"><span>Bengaluru</span></label>
@@ -186,14 +185,14 @@
         <span class="n c" data-k="me">You</span><span class="n s" data-k="sib">Siblings</span>
       </div>
       <dl class="jsum">
-        <div><dt>Looking after</dt><dd id="sumWho">Not chosen yet</dd></div>
+        <div><dt>For</dt><dd id="sumWho">Not chosen yet</dd></div>
         <div><dt>Runs in the family</dt><dd id="sumRuns">Not chosen yet</dd></div>
         <div><dt>Lives in</dt><dd id="sumCity">Not chosen yet</dd></div>
         <div id="sumRiskRow" hidden><dt>Risk check</dt><dd id="sumRisk"></dd></div>
       </dl>
       <div class="jfirst" id="firstStep">
         <div class="eyebrow"><span>What we would check first</span></div>
-        <p id="firstText">Choose who you want to look after, and we will show what usually comes first.</p>
+        <p id="firstText">Choose who this is for, and we will show what usually comes first.</p>
       </div>
     </aside>
 
